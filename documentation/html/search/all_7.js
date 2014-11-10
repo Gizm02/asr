@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x',['x',['../structbeta.html#a69e1cfdccb49231ebd4d501f18d2623c',1,'beta']]]
+  ['h',['h',['../class_context.html#a1985513ef1acb38c028326faf941afa6',1,'Context::h()'],['../_context_8cpp.html#aa29b857d4dd224322bc38ad041929b74',1,'h():&#160;Context.cpp']]]
 ];

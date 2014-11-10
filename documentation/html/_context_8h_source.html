@@ -91,35 +91,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef CONTEXT_H</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define CONTEXT_H</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_context.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_context.html">Context</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="comment">//Be careful, is an empty vector, elements must be added via push_back(T)</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_context.html#adbe3e18f42a06ebdd5afbb69ea3d30a9">   14</a></span>&#160;        std::vector&lt;double&gt; <a class="code" href="class_context.html#adbe3e18f42a06ebdd5afbb69ea3d30a9">energies</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="comment">//double computeOptimum { simop.}</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="class_context.html#a652cdcd2eedc8dbd9110bd284c5d5cf0">Context</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_context.html#a2d34e4556448e40693f61d15e091b604">~Context</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_context.html#a1162e0446c87e5670c6e19681e779338">computeOptimum</a>(<a class="code" href="class_context.html">Context</a>* context);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">//Using class here as typename is irrelevant but outlines the most that a class is to be expected for optimizer</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Optimizer&gt;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_context.html#acc7fc5c3fc8ad95f0c48466f3429a65b">   23</a></span>&#160;        Optimizer <a class="code" href="class_context.html#acc7fc5c3fc8ad95f0c48466f3429a65b">optimizer</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif // CONTEXT_H</span></div>
-<div class="ttc" id="class_context_html_a652cdcd2eedc8dbd9110bd284c5d5cf0"><div class="ttname"><a href="class_context.html#a652cdcd2eedc8dbd9110bd284c5d5cf0">Context::Context</a></div><div class="ttdeci">Context()</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cpp_source.html#l00008">Context.cpp:8</a></div></div>
-<div class="ttc" id="class_context_html_adbe3e18f42a06ebdd5afbb69ea3d30a9"><div class="ttname"><a href="class_context.html#adbe3e18f42a06ebdd5afbb69ea3d30a9">Context::energies</a></div><div class="ttdeci">std::vector&lt; double &gt; energies</div><div class="ttdoc">This variable stores all the ernergies x_1,...,x_t. </div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00014">Context.h:14</a></div></div>
-<div class="ttc" id="class_context_html_acc7fc5c3fc8ad95f0c48466f3429a65b"><div class="ttname"><a href="class_context.html#acc7fc5c3fc8ad95f0c48466f3429a65b">Context::optimizer</a></div><div class="ttdeci">Optimizer optimizer</div><div class="ttdoc">< This template variable stores the used algorithm. </div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00023">Context.h:23</a></div></div>
-<div class="ttc" id="class_context_html_a1162e0446c87e5670c6e19681e779338"><div class="ttname"><a href="class_context.html#a1162e0446c87e5670c6e19681e779338">Context::computeOptimum</a></div><div class="ttdeci">double computeOptimum(Context *context)</div></div>
-<div class="ttc" id="class_context_html_a2d34e4556448e40693f61d15e091b604"><div class="ttname"><a href="class_context.html#a2d34e4556448e40693f61d15e091b604">Context::~Context</a></div><div class="ttdeci">virtual ~Context()</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cpp_source.html#l00013">Context.cpp:13</a></div></div>
-<div class="ttc" id="class_context_html"><div class="ttname"><a href="class_context.html">Context</a></div><div class="ttdoc">This class encapsulates the application data and uses algorithms to compute the optimal solution for ...</div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00009">Context.h:9</a></div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_solution_8h.html">Solution.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="_context_8h.html#a97d832ae23af4f215e801e37e4f94254">   10</a></span>&#160;<span class="preprocessor">#define K 3 </span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="_context_8h.html#a0acb682b8260ab1c60b918599864e2e5">   11</a></span>&#160;<span class="preprocessor">#define T (K+1) </span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">template &lt;class Optimizer&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_context.html">   13</a></span>&#160;<span class="preprocessor">class Context</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//Using class here as typename is irrelevant but outlines the most that a class is to be expected for optimizer</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="comment">//Be careful, is an empty vector, elements must be added via push_back(T)</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_context.html#abd8c3854af4e7668dfec00496bfccd7e">   19</a></span>&#160;        std::vector&lt;double,T&gt; <a class="code" href="class_context.html#abd8c3854af4e7668dfec00496bfccd7e">energies</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="comment">//double computeOptimum { simop.}</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="class_context.html">Context</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="class_context.html">Context</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="_context_8cpp.html#ac5a4d7f3fc6a0ce4aac384022c3afc99">optimize</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="_context_8cpp.html#aa29b857d4dd224322bc38ad041929b74">h</a>(<span class="keywordtype">double</span> <a class="code" href="jquery_8js.html#a4c3eadaa5164016d2c340d495fc6e55e">x</a>,<span class="keywordtype">double</span> x_mean);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_context.html#ae10d37724764656182fa3ac2b206b123">   41</a></span>&#160;        Optimizer <a class="code" href="class_context.html#ae10d37724764656182fa3ac2b206b123">optimizer</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_context.html#a7da3b8b55d4f61aeffcfbe35dcd8bfa0">   42</a></span>&#160;        <a class="code" href="class_solution.html">Solution</a> *<a class="code" href="class_context.html#a7da3b8b55d4f61aeffcfbe35dcd8bfa0">solution</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif // CONTEXT_H</span></div>
+<div class="ttc" id="_context_8cpp_html_aa29b857d4dd224322bc38ad041929b74"><div class="ttname"><a href="_context_8cpp.html#aa29b857d4dd224322bc38ad041929b74">h</a></div><div class="ttdeci">double h(double x, double x_mean)</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cpp_source.html#l00015">Context.cpp:15</a></div></div>
+<div class="ttc" id="class_context_html_ae10d37724764656182fa3ac2b206b123"><div class="ttname"><a href="class_context.html#ae10d37724764656182fa3ac2b206b123">Context::optimizer</a></div><div class="ttdeci">Optimizer optimizer</div><div class="ttdoc">This represents the chosen algorithm. </div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00041">Context.h:41</a></div></div>
+<div class="ttc" id="class_context_html_abd8c3854af4e7668dfec00496bfccd7e"><div class="ttname"><a href="class_context.html#abd8c3854af4e7668dfec00496bfccd7e">Context::energies</a></div><div class="ttdeci">std::vector&lt; double, T &gt; energies</div><div class="ttdoc">This variable stores all the ernergies x_1,...,x_t. </div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00019">Context.h:19</a></div></div>
+<div class="ttc" id="jquery_8js_html_a4c3eadaa5164016d2c340d495fc6e55e"><div class="ttname"><a href="jquery_8js.html#a4c3eadaa5164016d2c340d495fc6e55e">x</a></div><div class="ttdeci">function x(bx)</div><div class="ttdef"><b>Definition:</b> <a href="jquery_8js_source.html#l00030">jquery.js:30</a></div></div>
+<div class="ttc" id="class_solution_html"><div class="ttname"><a href="class_solution.html">Solution</a></div><div class="ttdoc">This class encapsulates solution context produced by the applied algorithms. </div><div class="ttdef"><b>Definition:</b> <a href="_solution_8h_source.html#l00009">Solution.h:9</a></div></div>
+<div class="ttc" id="_context_8cpp_html_ac5a4d7f3fc6a0ce4aac384022c3afc99"><div class="ttname"><a href="_context_8cpp.html#ac5a4d7f3fc6a0ce4aac384022c3afc99">optimize</a></div><div class="ttdeci">double optimize()</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cpp_source.html#l00019">Context.cpp:19</a></div></div>
+<div class="ttc" id="class_context_html_a7da3b8b55d4f61aeffcfbe35dcd8bfa0"><div class="ttname"><a href="class_context.html#a7da3b8b55d4f61aeffcfbe35dcd8bfa0">Context::solution</a></div><div class="ttdeci">Solution * solution</div><div class="ttdoc">Pointer to an object that stores produced result context. </div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00042">Context.h:42</a></div></div>
+<div class="ttc" id="class_context_html"><div class="ttname"><a href="class_context.html">Context</a></div><div class="ttdoc">< This template variable stores the used algorithm. </div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00013">Context.h:13</a></div></div>
+<div class="ttc" id="_solution_8h_html"><div class="ttname"><a href="_solution_8h.html">Solution.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 6 2014 16:31:37 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 9 2014 23:31:50 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

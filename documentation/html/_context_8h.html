@@ -84,37 +84,85 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">Context.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &quot;<a class="el" href="_solution_8h_source.html">Solution.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Context.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_context_8h__incl.png" border="0" usemap="#include_2_context_8h" alt=""/></div>
+<map name="include_2_context_8h" id="include_2_context_8h">
+<area shape="rect" id="node4" href="_solution_8h.html" title="Solution.h" alt="" coords="168,80,248,107"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_context_8h__dep__incl.png" border="0" usemap="#include_2_context_8hdep" alt=""/></div>
 <map name="include_2_context_8hdep" id="include_2_context_8hdep">
-<area shape="rect" id="node2" href="_context_8cpp.html" title="src/Context.cpp" alt="" coords="9,80,124,107"/></map>
+<area shape="rect" id="node2" href="_simple_optimizer_8h.html" title="include/SimpleOptimizer.h" alt="" coords="5,80,180,107"/><area shape="rect" id="node4" href="_context_8cpp.html" title="src/Context.cpp" alt="" coords="205,80,319,107"/><area shape="rect" id="node3" href="_simple_optimizer_8cpp.html" title="src/SimpleOptimizer.cpp" alt="" coords="10,155,175,181"/></map>
 </div>
 </div>
 <p><a href="_context_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_context.html">Context</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class encapsulates the application data and uses algorithms to compute the optimal solution for the problem given in the task.  <a href="class_context.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_context.html">Context&lt; Optimizer &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; This template variable stores the used algorithm.  <a href="class_context.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a97d832ae23af4f215e801e37e4f94254"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_context_8h.html#a97d832ae23af4f215e801e37e4f94254">K</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a97d832ae23af4f215e801e37e4f94254"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class encapsulates the application/problem data and uses algorithms to compute the optimal solution for the problem given in the task.  <a href="#a97d832ae23af4f215e801e37e4f94254">More...</a><br /></td></tr>
+<tr class="separator:a97d832ae23af4f215e801e37e4f94254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0acb682b8260ab1c60b918599864e2e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_context_8h.html#a0acb682b8260ab1c60b918599864e2e5">T</a>&#160;&#160;&#160;(<a class="el" href="_context_8h.html#a97d832ae23af4f215e801e37e4f94254">K</a>+1)</td></tr>
+<tr class="memdesc:a0acb682b8260ab1c60b918599864e2e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of acoustic feature vectors that are taken into account.  <a href="#a0acb682b8260ab1c60b918599864e2e5">More...</a><br /></td></tr>
+<tr class="separator:a0acb682b8260ab1c60b918599864e2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a97d832ae23af4f215e801e37e4f94254"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define K&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This class encapsulates the application/problem data and uses algorithms to compute the optimal solution for the problem given in the task. </p>
+<p>Total number of segments that have to be determined by the start-stop-detection. </p>
+
+<p>Definition at line <a class="el" href="_context_8h_source.html#l00010">10</a> of file <a class="el" href="_context_8h_source.html">Context.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0acb682b8260ab1c60b918599864e2e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define T&#160;&#160;&#160;(<a class="el" href="_context_8h.html#a97d832ae23af4f215e801e37e4f94254">K</a>+1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Total number of acoustic feature vectors that are taken into account. </p>
+
+<p>Definition at line <a class="el" href="_context_8h_source.html#l00011">11</a> of file <a class="el" href="_context_8h_source.html">Context.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 6 2014 16:31:37 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 9 2014 23:31:50 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

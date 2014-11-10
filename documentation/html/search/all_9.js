@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7econtext',['~Context',['../class_context.html#a2d34e4556448e40693f61d15e091b604',1,'Context']]],
-  ['_7esimpleoptimizer',['~SimpleOptimizer',['../class_simple_optimizer.html#a3a72242874644c1736a347a74884645d',1,'SimpleOptimizer']]]
+  ['jquery',['jQuery',['../jquery_8js.html#aa676d9980e4aff2d9210b4c8e0e1dad9',1,'jquery.js']]],
+  ['jquery_2ejs',['jquery.js',['../jquery_8js.html',1,'']]]
 ];

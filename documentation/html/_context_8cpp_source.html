@@ -90,23 +90,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="_context_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_context_8h.html">Context.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="_context_8cpp.html#a8092ef99d0c6e417d3db1475d8b32eb3">    6</a></span>&#160;<span class="preprocessor">#define OPTIMIZER   SimpleOptimizer</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_context.html#a652cdcd2eedc8dbd9110bd284c5d5cf0">    8</a></span>&#160;<a class="code" href="class_context.html#a652cdcd2eedc8dbd9110bd284c5d5cf0">Context::Context</a>()</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">//ctor</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_context.html#a2d34e4556448e40693f61d15e091b604">   13</a></span>&#160;<a class="code" href="class_context.html#a2d34e4556448e40693f61d15e091b604">Context::~Context</a>()</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">//dtor</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="ttc" id="class_context_html_a652cdcd2eedc8dbd9110bd284c5d5cf0"><div class="ttname"><a href="class_context.html#a652cdcd2eedc8dbd9110bd284c5d5cf0">Context::Context</a></div><div class="ttdeci">Context()</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cpp_source.html#l00008">Context.cpp:8</a></div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_context.html#ad7dcfa9e760df9285606c289e2c5c402">    9</a></span>&#160;<a class="code" href="class_context.html#ad7dcfa9e760df9285606c289e2c5c402">Context::Context</a>()</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">//ctor</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="_context_8cpp.html#aa29b857d4dd224322bc38ad041929b74">   15</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="_context_8cpp.html#aa29b857d4dd224322bc38ad041929b74">h</a>(<span class="keywordtype">double</span> <a class="code" href="jquery_8js.html#a4c3eadaa5164016d2c340d495fc6e55e">x</a>,<span class="keywordtype">double</span> x_mean) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> ((pow((x-x_mean),2)));</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="_context_8cpp.html#ac5a4d7f3fc6a0ce4aac384022c3afc99">   19</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="_context_8cpp.html#ac5a4d7f3fc6a0ce4aac384022c3afc99">optimize</a>() {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_context.html#a0affee472b940ba8a40b68c493d5ed65">   22</a></span>&#160;<a class="code" href="class_context.html#a0affee472b940ba8a40b68c493d5ed65">Context::~Context</a>()</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">//dtor</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="ttc" id="_context_8cpp_html_aa29b857d4dd224322bc38ad041929b74"><div class="ttname"><a href="_context_8cpp.html#aa29b857d4dd224322bc38ad041929b74">h</a></div><div class="ttdeci">double h(double x, double x_mean)</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cpp_source.html#l00015">Context.cpp:15</a></div></div>
+<div class="ttc" id="jquery_8js_html_a4c3eadaa5164016d2c340d495fc6e55e"><div class="ttname"><a href="jquery_8js.html#a4c3eadaa5164016d2c340d495fc6e55e">x</a></div><div class="ttdeci">function x(bx)</div><div class="ttdef"><b>Definition:</b> <a href="jquery_8js_source.html#l00030">jquery.js:30</a></div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
-<div class="ttc" id="class_context_html_a2d34e4556448e40693f61d15e091b604"><div class="ttname"><a href="class_context.html#a2d34e4556448e40693f61d15e091b604">Context::~Context</a></div><div class="ttdeci">virtual ~Context()</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cpp_source.html#l00013">Context.cpp:13</a></div></div>
+<div class="ttc" id="_context_8cpp_html_ac5a4d7f3fc6a0ce4aac384022c3afc99"><div class="ttname"><a href="_context_8cpp.html#ac5a4d7f3fc6a0ce4aac384022c3afc99">optimize</a></div><div class="ttdeci">double optimize()</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cpp_source.html#l00019">Context.cpp:19</a></div></div>
+<div class="ttc" id="class_context_html_ad7dcfa9e760df9285606c289e2c5c402"><div class="ttname"><a href="class_context.html#ad7dcfa9e760df9285606c289e2c5c402">Context::Context</a></div><div class="ttdeci">Context()</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cpp_source.html#l00009">Context.cpp:9</a></div></div>
+<div class="ttc" id="class_context_html_a0affee472b940ba8a40b68c493d5ed65"><div class="ttname"><a href="class_context.html#a0affee472b940ba8a40b68c493d5ed65">Context::~Context</a></div><div class="ttdeci">virtual ~Context()</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cpp_source.html#l00022">Context.cpp:22</a></div></div>
 <div class="ttc" id="_context_8h_html"><div class="ttname"><a href="_context_8h.html">Context.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 6 2014 16:31:37 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 9 2014 23:31:50 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

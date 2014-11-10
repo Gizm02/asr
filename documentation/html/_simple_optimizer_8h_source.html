@@ -89,25 +89,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="_simple_optimizer_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SIMPLEOPTIMIZER_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SIMPLEOPTIMIZER_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_context_8h.html">Context.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_simple_optimizer.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_simple_optimizer.html">SimpleOptimizer</a></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="class_simple_optimizer.html#ab6a530c830bc62cff41c864ab070bdf5">SimpleOptimizer</a>();</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_simple_optimizer.html#a3a72242874644c1736a347a74884645d">~SimpleOptimizer</a>();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;};</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif // SIMPLEOPTIMIZER_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_simple_optimizer.html#a185967fd42a1e0d8d39686cccf82fd83">optimize</a>(<a class="code" href="class_context.html">Context</a> *context);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif // SIMPLEOPTIMIZER_H</span></div>
 <div class="ttc" id="class_simple_optimizer_html_a3a72242874644c1736a347a74884645d"><div class="ttname"><a href="class_simple_optimizer.html#a3a72242874644c1736a347a74884645d">SimpleOptimizer::~SimpleOptimizer</a></div><div class="ttdeci">virtual ~SimpleOptimizer()</div><div class="ttdef"><b>Definition:</b> <a href="_simple_optimizer_8cpp_source.html#l00008">SimpleOptimizer.cpp:8</a></div></div>
 <div class="ttc" id="class_simple_optimizer_html"><div class="ttname"><a href="class_simple_optimizer.html">SimpleOptimizer</a></div><div class="ttdoc">< For use of at(...) member method of std::array or rather std::vector. </div><div class="ttdef"><b>Definition:</b> <a href="_simple_optimizer_8h_source.html#l00006">SimpleOptimizer.h:6</a></div></div>
+<div class="ttc" id="class_simple_optimizer_html_a185967fd42a1e0d8d39686cccf82fd83"><div class="ttname"><a href="class_simple_optimizer.html#a185967fd42a1e0d8d39686cccf82fd83">SimpleOptimizer::optimize</a></div><div class="ttdeci">double optimize(Context *context)</div></div>
+<div class="ttc" id="class_context_html"><div class="ttname"><a href="class_context.html">Context</a></div><div class="ttdoc">< This template variable stores the used algorithm. </div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00013">Context.h:13</a></div></div>
 <div class="ttc" id="class_simple_optimizer_html_ab6a530c830bc62cff41c864ab070bdf5"><div class="ttname"><a href="class_simple_optimizer.html#ab6a530c830bc62cff41c864ab070bdf5">SimpleOptimizer::SimpleOptimizer</a></div><div class="ttdeci">SimpleOptimizer()</div><div class="ttdef"><b>Definition:</b> <a href="_simple_optimizer_8cpp_source.html#l00003">SimpleOptimizer.cpp:3</a></div></div>
+<div class="ttc" id="_context_8h_html"><div class="ttname"><a href="_context_8h.html">Context.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 6 2014 16:31:37 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 9 2014 23:31:50 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

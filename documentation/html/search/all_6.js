@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['simpleoptimizer',['SimpleOptimizer',['../class_simple_optimizer.html',1,'SimpleOptimizer'],['../class_simple_optimizer.html#ab6a530c830bc62cff41c864ab070bdf5',1,'SimpleOptimizer::SimpleOptimizer()']]],
-  ['simpleoptimizer_2ecpp',['SimpleOptimizer.cpp',['../_simple_optimizer_8cpp.html',1,'']]],
-  ['simpleoptimizer_2eh',['SimpleOptimizer.h',['../_simple_optimizer_8h.html',1,'']]],
-  ['summ',['summ',['../main_8cpp.html#a7fc90d1cd10aac8297791128736b683d',1,'main.cpp']]]
+  ['getsolution',['getSolution',['../class_solution.html#a4ae9f80f3a00b51fed1d9f3f837fa2e8',1,'Solution']]],
+  ['getxpos',['getXPos',['../search_8js.html#a76d24aea0009f892f8ccc31d941c0a2b',1,'search.js']]],
+  ['getypos',['getYPos',['../search_8js.html#a8d7b405228661d7b6216b6925d2b8a69',1,'search.js']]]
 ];

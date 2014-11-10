@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['_7econtext',['~Context',['../class_context.html#a2d34e4556448e40693f61d15e091b604',1,'Context']]],
-  ['_7esimpleoptimizer',['~SimpleOptimizer',['../class_simple_optimizer.html#a3a72242874644c1736a347a74884645d',1,'SimpleOptimizer']]]
+  ['getsolution',['getSolution',['../class_solution.html#a4ae9f80f3a00b51fed1d9f3f837fa2e8',1,'Solution']]],
+  ['getxpos',['getXPos',['../search_8js.html#a76d24aea0009f892f8ccc31d941c0a2b',1,'search.js']]],
+  ['getypos',['getYPos',['../search_8js.html#a8d7b405228661d7b6216b6925d2b8a69',1,'search.js']]]
 ];

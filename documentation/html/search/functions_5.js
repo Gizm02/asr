@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['_7econtext',['~Context',['../class_context.html#a2d34e4556448e40693f61d15e091b604',1,'Context']]],
-  ['_7eoptimizationsolver',['~OptimizationSolver',['../class_optimization_solver.html#a8a587d3bd69104814679b176e741f8bc',1,'OptimizationSolver']]],
-  ['_7esimpleoptimizer',['~SimpleOptimizer',['../class_simple_optimizer.html#a3a72242874644c1736a347a74884645d',1,'SimpleOptimizer']]]
+  ['h',['h',['../class_context.html#a1985513ef1acb38c028326faf941afa6',1,'Context::h()'],['../_context_8cpp.html#aa29b857d4dd224322bc38ad041929b74',1,'h():&#160;Context.cpp']]]
 ];

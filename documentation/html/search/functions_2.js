@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]]
+  ['context',['Context',['../class_context.html#ad7dcfa9e760df9285606c289e2c5c402',1,'Context']]],
+  ['converttoid',['convertToId',['../search_8js.html#a196a29bd5a5ee7cd5b485e0753a49e57',1,'search.js']]],
+  ['createresults',['createResults',['../search_8js.html#a6b2c651120de3ed1dcf0d85341d51895',1,'search.js']]]
 ];
