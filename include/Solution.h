@@ -26,6 +26,7 @@ class Solution
          *
          */
         double getSolution();
+        void setSolution(double solution);
     protected:
     private:
         double solution;/**< Stores the result computed by the chosen optimizer/algorithm object. */

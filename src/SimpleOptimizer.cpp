@@ -3,10 +3,6 @@
 #include <stdexcept>/**< For use of at(...) member method of std::array or rather std::vector. This enables throwing of exceptions by at(...) when array boundaries are hurt.*/
 #include <assert.h>
 using namespace std;
-SimpleOptimizer::SimpleOptimizer()
-{
-    //ctor
-}
 
 template <class Optimizer>
 void optimize(Context<Optimizer>* context,Solution* solution) {
@@ -34,7 +30,7 @@ void optimize(Context<Optimizer>* context,Solution* solution) {
             for(int k=0;k<(j-i);k++) {
                 localCost+=context->h(energies.at(i+k),mean);
             }
-            costs.push_back(cost);
+            //costs.at();
         }
     }
     double globalCosts=1;
@@ -45,6 +41,16 @@ void optimize(Context<Optimizer>* context,Solution* solution) {
             optimalCosts=((globalCosts<optimalCosts)||i==0)?globalCosts:optimalCosts;
         }
     }
+    solution->setSolution(optimalCosts);
+}
+
+double getMean(vector<double> energies, int i, int j) {
+    double mean=0;
+    for(int k=0;k<=(j-i);k++) {
+        mean+=energies.at(i*K+k);
+    }
+    mean*=1.0/(j-i);
+    return mean;
 }
 SimpleOptimizer::~SimpleOptimizer()
 {

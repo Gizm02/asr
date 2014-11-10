@@ -19,7 +19,7 @@ class Context
         //Be careful, is an empty vector, elements must be added via push_back(T)
 
         //double computeOptimum { simop.}
-        Context();
+        Context():energies(K){ };
         virtual ~Context();
 
         /*! \brief  This function optimizes the segmentation of the input vectors.

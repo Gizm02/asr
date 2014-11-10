@@ -7,12 +7,6 @@
 using namespace std;
 
 template <class Optimizer>
-Context<Optimizer>::Context()
-{
-    //ctor
-}
-
-template <class Optimizer>
 double Context<Optimizer>::h(double x,double x_mean) {
     return ((pow((x-x_mean),2)));
 }

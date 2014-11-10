@@ -6,7 +6,7 @@
 class SimpleOptimizer
 {
     public:
-        SimpleOptimizer();
+        SimpleOptimizer():costs(K) { };
         virtual ~SimpleOptimizer();
 
         /** \brief This method optimizes the problem given by the context-obj.
@@ -18,7 +18,16 @@ class SimpleOptimizer
         void optimize(Context<SimpleOptimizer>* context,Solution* solution);
     protected:
     private:
-        std::vector<double> costs;
+        /** \brief  Computes the mean of acoustic feature vectors within a fixed interval.
+         *
+         * \param   energies Contains the acoustic feature vectors that are taken into account.
+         * \param   i The lower index of lower interval bound.
+         * \param   j The bigger index of the upper interval bound.
+         * \return The mean of the vectors.
+         *
+         */
+        double getMean(std::vector<double> energies, int i, int j);
+        std::vector<double> costs;/**< The cost matrix. */
 };
 
 #endif // SIMPLEOPTIMIZER_H

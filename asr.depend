@@ -5,25 +5,24 @@
 	"SimpleOptimizer.h"
 	"Solution.h"
 
-1415650227 d:\documents\cpp_projects\asr\include\context.h
+1415661622 d:\documents\cpp_projects\asr\include\context.h
 	<vector>
 	<cmath>
 	"Solution.h"
 
-1415651377 d:\documents\cpp_projects\asr\include\solution.h
+1415663421 d:\documents\cpp_projects\asr\include\solution.h
 
-1415656397 d:\documents\cpp_projects\asr\include\simpleoptimizer.h
+1415663310 d:\documents\cpp_projects\asr\include\simpleoptimizer.h
 	<stdlib.h>
-	<stdexcept>
 	"Context.h"
 
-1415652230 source:d:\documents\cpp_projects\asr\src\context.cpp
+1415661646 source:d:\documents\cpp_projects\asr\src\context.cpp
 	"Context.h"
 
 1415658618 source:d:\documents\cpp_projects\asr\src\simpleoptimizer.cpp
 	"SimpleOptimizer.h"
 	<iostream>
 
-1415649457 source:d:\documents\cpp_projects\asr\src\solution.cpp
+1415659954 source:d:\documents\cpp_projects\asr\src\solution.cpp
 	"Solution.h"
 

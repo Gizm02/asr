@@ -6,3 +6,7 @@ Solution::~Solution()
 {
     //dtor
 }
+
+void setSolution(double solution) {
+    solution=solution;
+}
