@@ -10,9 +10,18 @@
 	<cmath>
 	"Solution.h"
 
-1415648925 d:\documents\cpp_projects\asr\include\solution.h
+1415651377 d:\documents\cpp_projects\asr\include\solution.h
 
 1415650804 d:\documents\cpp_projects\asr\include\simpleoptimizer.h
 	"Context.h"
 	<stdexcept>
+
+1415651271 source:d:\documents\cpp_projects\asr\src\context.cpp
+	"Context.h"
+
+1415265209 source:d:\documents\cpp_projects\asr\src\simpleoptimizer.cpp
+	"SimpleOptimizer.h"
+
+1415649457 source:d:\documents\cpp_projects\asr\src\solution.cpp
+	"Solution.h"
 

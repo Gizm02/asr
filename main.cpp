@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-    Context<SimpleOptimizer> context;
+    Context<SimpleOptimizer> context();
     float a; /*!< Detailed description after the member */
     cout << "Hello world!" << endl;
     return 0;
