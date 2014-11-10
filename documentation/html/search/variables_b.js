@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['l',['L',['../jquery_8js.html#a38ee4c0b5f4fe2a18d0c783af540d253',1,'jquery.js']]],
-  ['line',['line',['../structtesting_1_1internal_1_1_assert_helper_1_1_assert_helper_data.html#aff816673320ecd035288dffe44760f90',1,'testing::internal::AssertHelper::AssertHelperData']]],
-  ['line_5fnumber_5f',['line_number_',['../classtesting_1_1_test_part_result.html#a7a988009362bcdc28d3b801fc6059b5e',1,'testing::TestPartResult']]],
-  ['link_5f',['link_',['../classtesting_1_1internal_1_1linked__ptr.html#a8fdfa75fea8bfc10825a3cc53c50461f',1,'testing::internal::linked_ptr']]]
+  ['searchdata',['searchData',['../all__0_8js.html#ad01a7523f103d6242ef9b0451861231e',1,'searchData():&#160;all_0.js'],['../files__0_8js.html#ad01a7523f103d6242ef9b0451861231e',1,'searchData():&#160;files_0.js'],['../functions__0_8js.html#ad01a7523f103d6242ef9b0451861231e',1,'searchData():&#160;functions_0.js']]],
+  ['solution',['solution',['../class_context.html#a4a7878f8bab232b8b09305c10ebf392b',1,'Context::solution()'],['../class_solution.html#a57e7e3657c040845347b39816b605185',1,'Solution::solution()']]]
 ];
