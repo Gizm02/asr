@@ -1,0 +1,6 @@
+<map id="testing::TestInfo" name="testing::TestInfo">
+<area shape="rect" id="node2" href="$classtesting_1_1_test_result.html" title="testing::TestResult" alt="" coords="319,13,450,39"/>
+<area shape="rect" id="node3" href="$classtesting_1_1internal_1_1_mutex.html" title="testing::internal::\lMutex" alt="" coords="5,5,124,47"/>
+<area shape="rect" id="node4" href="$classtesting_1_1internal_1_1_test_factory_base.html" title="testing::internal::\lTestFactoryBase" alt="" coords="324,64,445,105"/>
+<area shape="rect" id="node5" href="$classtesting_1_1internal_1_1scoped__ptr.html" title="testing::internal::\lscoped_ptr\&lt; const ::\lstd::string \&gt;" alt="" coords="313,130,456,186"/>
+</map>

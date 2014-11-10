@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -80,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d8ddb1c99b9e7ba62930bba337b4be52.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -89,24 +90,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="_simple_optimizer_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_simple_optimizer_8h.html">SimpleOptimizer.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="class_simple_optimizer.html#ab6a530c830bc62cff41c864ab070bdf5">    3</a></span>&#160;<a class="code" href="class_simple_optimizer.html#ab6a530c830bc62cff41c864ab070bdf5">SimpleOptimizer::SimpleOptimizer</a>()</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="comment">//ctor</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_simple_optimizer.html#a3a72242874644c1736a347a74884645d">    8</a></span>&#160;<a class="code" href="class_simple_optimizer.html#a3a72242874644c1736a347a74884645d">SimpleOptimizer::~SimpleOptimizer</a>()</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">//dtor</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
-<div class="ttc" id="class_simple_optimizer_html_a3a72242874644c1736a347a74884645d"><div class="ttname"><a href="class_simple_optimizer.html#a3a72242874644c1736a347a74884645d">SimpleOptimizer::~SimpleOptimizer</a></div><div class="ttdeci">virtual ~SimpleOptimizer()</div><div class="ttdef"><b>Definition:</b> <a href="_simple_optimizer_8cpp_source.html#l00008">SimpleOptimizer.cpp:8</a></div></div>
-<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
-<div class="ttc" id="class_simple_optimizer_html_ab6a530c830bc62cff41c864ab070bdf5"><div class="ttname"><a href="class_simple_optimizer.html#ab6a530c830bc62cff41c864ab070bdf5">SimpleOptimizer::SimpleOptimizer</a></div><div class="ttdeci">SimpleOptimizer()</div><div class="ttdef"><b>Definition:</b> <a href="_simple_optimizer_8cpp_source.html#l00003">SimpleOptimizer.cpp:3</a></div></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="class_simple_optimizer.html#ab6a530c830bc62cff41c864ab070bdf5">    4</a></span>&#160;<a class="code" href="class_simple_optimizer.html#ab6a530c830bc62cff41c864ab070bdf5">SimpleOptimizer::SimpleOptimizer</a>()</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="comment">//ctor</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Optimizer&gt;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="_simple_optimizer_8cpp.html#a20d55de67dfdbf842c8593f9fb87862f">   10</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_simple_optimizer_8cpp.html#a20d55de67dfdbf842c8593f9fb87862f">optimize</a>(<a class="code" href="class_context.html">Context&lt;Optimizer&gt;</a>* context,<a class="code" href="class_solution.html">Solution</a>* solution) {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    vector&lt;double&gt; energies=context-&gt;<a class="code" href="class_context.html#aff66af23fe2d5b724bba90635758ab92">getEnergies</a>();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">size_t</span> S=<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(energies.size());</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;S;i++) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">if</span>(energies.at(i)!=context-&gt;<a class="code" href="class_context.html#aff66af23fe2d5b724bba90635758ab92">getEnergies</a>().at(i)) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            cout&lt;&lt;<span class="stringliteral">&quot;Vector copying did not work!&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;(<a class="code" href="_context_8h.html#a97d832ae23af4f215e801e37e4f94254">K</a>-2);i++) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=i+1;j&lt;(<a class="code" href="_context_8h.html#a97d832ae23af4f215e801e37e4f94254">K</a>-1);j++) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            cout &lt;&lt;<span class="stringliteral">&quot;TOLL&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_simple_optimizer.html#a3a72242874644c1736a347a74884645d">   28</a></span>&#160;<a class="code" href="class_simple_optimizer.html#a3a72242874644c1736a347a74884645d">SimpleOptimizer::~SimpleOptimizer</a>()</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//dtor</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="ttc" id="class_simple_optimizer_html_a3a72242874644c1736a347a74884645d"><div class="ttname"><a href="class_simple_optimizer.html#a3a72242874644c1736a347a74884645d">SimpleOptimizer::~SimpleOptimizer</a></div><div class="ttdeci">virtual ~SimpleOptimizer()</div><div class="ttdef"><b>Definition:</b> <a href="_simple_optimizer_8cpp_source.html#l00028">SimpleOptimizer.cpp:28</a></div></div>
+<div class="ttc" id="_simple_optimizer_8cpp_html_a20d55de67dfdbf842c8593f9fb87862f"><div class="ttname"><a href="_simple_optimizer_8cpp.html#a20d55de67dfdbf842c8593f9fb87862f">optimize</a></div><div class="ttdeci">void optimize(Context&lt; Optimizer &gt; *context, Solution *solution)</div><div class="ttdef"><b>Definition:</b> <a href="_simple_optimizer_8cpp_source.html#l00010">SimpleOptimizer.cpp:10</a></div></div>
+<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="gtest-tuple_8h_source.html#l00104">gtest-tuple.h:104</a></div></div>
+<div class="ttc" id="class_solution_html"><div class="ttname"><a href="class_solution.html">Solution</a></div><div class="ttdoc">This class encapsulates solution context produced by the applied algorithms. </div><div class="ttdef"><b>Definition:</b> <a href="_solution_8h_source.html#l00009">Solution.h:9</a></div></div>
+<div class="ttc" id="class_context_html"><div class="ttname"><a href="class_context.html">Context</a></div><div class="ttdoc">< This template variable stores the used algorithm. </div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00014">Context.h:14</a></div></div>
+<div class="ttc" id="class_simple_optimizer_html_ab6a530c830bc62cff41c864ab070bdf5"><div class="ttname"><a href="class_simple_optimizer.html#ab6a530c830bc62cff41c864ab070bdf5">SimpleOptimizer::SimpleOptimizer</a></div><div class="ttdeci">SimpleOptimizer()</div><div class="ttdef"><b>Definition:</b> <a href="_simple_optimizer_8cpp_source.html#l00004">SimpleOptimizer.cpp:4</a></div></div>
+<div class="ttc" id="class_context_html_aff66af23fe2d5b724bba90635758ab92"><div class="ttname"><a href="class_context.html#aff66af23fe2d5b724bba90635758ab92">Context::getEnergies</a></div><div class="ttdeci">std::vector&lt; double &gt; getEnergies()</div><div class="ttdoc">Getter function for the energies stored by the context-obj. </div><div class="ttdef"><b>Definition:</b> <a href="_context_8cpp_source.html#l00026">Context.cpp:26</a></div></div>
 <div class="ttc" id="_simple_optimizer_8h_html"><div class="ttname"><a href="_simple_optimizer_8h.html">SimpleOptimizer.h</a></div></div>
+<div class="ttc" id="_context_8h_html_a97d832ae23af4f215e801e37e4f94254"><div class="ttname"><a href="_context_8h.html#a97d832ae23af4f215e801e37e4f94254">K</a></div><div class="ttdeci">#define K</div><div class="ttdoc">This class encapsulates the application/problem data and uses algorithms to compute the optimal solut...</div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00010">Context.h:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 10 2014 21:29:44 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 10 2014 23:33:48 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

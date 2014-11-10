@@ -1,8 +1,8 @@
 #ifndef SIMPLEOPTIMIZER_H
 #define SIMPLEOPTIMIZER_H
-#include "Context.h"
+#include <stdlib.h>
 #include <stdexcept>/**< For use of at(...) member method of std::array or rather std::vector. This enables throwing of exceptions by at(...) when array boundaries are hurt.*/
-
+#include "Context.h"
 
 class SimpleOptimizer
 {
@@ -19,6 +19,7 @@ class SimpleOptimizer
         void optimize(Context<SimpleOptimizer>* context,Solution* solution);
     protected:
     private:
+        std::vector<double> costs;
 };
 
 #endif // SIMPLEOPTIMIZER_H
