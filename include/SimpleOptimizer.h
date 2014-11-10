@@ -1,7 +1,6 @@
 #ifndef SIMPLEOPTIMIZER_H
 #define SIMPLEOPTIMIZER_H
 #include <stdlib.h>
-#include <stdexcept>/**< For use of at(...) member method of std::array or rather std::vector. This enables throwing of exceptions by at(...) when array boundaries are hurt.*/
 #include "Context.h"
 
 class SimpleOptimizer
