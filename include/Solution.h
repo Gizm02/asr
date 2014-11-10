@@ -9,12 +9,15 @@
 class Solution
 {
     public:
-        /** \brief
+        /** \brief The main ctor of this class.
          *
          * \param   solution    The result the Solution-object supposed to store.
          *
          */
         Solution(double solution);
+        Solution():Solution(0){ };/**< Ctor delegation */
+
+
         virtual ~Solution();
 
         /** \brief Returns the solution computed by the chosen optimizer object.

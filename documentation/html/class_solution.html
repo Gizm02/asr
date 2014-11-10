@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,8 +97,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4b93db34a269b6386700aa8937ad9e45"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#a4b93db34a269b6386700aa8937ad9e45">Solution</a> (double <a class="el" href="class_solution.html#a57e7e3657c040845347b39816b605185">solution</a>)</td></tr>
+<tr class="memdesc:a4b93db34a269b6386700aa8937ad9e45"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main ctor of this class.  <a href="#a4b93db34a269b6386700aa8937ad9e45">More...</a><br /></td></tr>
 <tr class="separator:a4b93db34a269b6386700aa8937ad9e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab55bd4b023d596ce11aaf737b9a6123b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#ab55bd4b023d596ce11aaf737b9a6123b">Solution</a> ()</td></tr>
+<tr class="separator:ab55bd4b023d596ce11aaf737b9a6123b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d245f7409aacf6ace5e965b7879a580"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#a5d245f7409aacf6ace5e965b7879a580">~Solution</a> ()</td></tr>
+<tr class="memdesc:a5d245f7409aacf6ace5e965b7879a580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctor delegation.  <a href="#a5d245f7409aacf6ace5e965b7879a580">More...</a><br /></td></tr>
 <tr class="separator:a5d245f7409aacf6ace5e965b7879a580"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ae9f80f3a00b51fed1d9f3f837fa2e8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#a4ae9f80f3a00b51fed1d9f3f837fa2e8">getSolution</a> ()</td></tr>
 <tr class="memdesc:a4ae9f80f3a00b51fed1d9f3f837fa2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the solution computed by the chosen optimizer object.  <a href="#a4ae9f80f3a00b51fed1d9f3f837fa2e8">More...</a><br /></td></tr>
@@ -130,6 +135,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The main ctor of this class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">solution</td><td>The result the Solution-object supposed to store. </td></tr>
@@ -138,6 +145,31 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p>Definition at line <a class="el" href="_solution_8cpp_source.html#l00003">3</a> of file <a class="el" href="_solution_8cpp_source.html">Solution.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab55bd4b023d596ce11aaf737b9a6123b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Solution::Solution </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_solution_8h_source.html#l00018">18</a> of file <a class="el" href="_solution_8h_source.html">Solution.h</a>.</p>
 
 </div>
 </div>
@@ -162,7 +194,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_solution_8cpp_source.html#l00009">9</a> of file <a class="el" href="_solution_8cpp_source.html">Solution.cpp</a>.</p>
+<p>Ctor delegation. </p>
+
+<p>Definition at line <a class="el" href="_solution_8cpp_source.html#l00005">5</a> of file <a class="el" href="_solution_8cpp_source.html">Solution.cpp</a>.</p>
 
 </div>
 </div>
@@ -206,7 +240,7 @@ Private Attributes</h2></td></tr>
 
 <p>The number of multiplications needed for computing the optimum. </p>
 
-<p>Definition at line <a class="el" href="_solution_8h_source.html#l00029">29</a> of file <a class="el" href="_solution_8h_source.html">Solution.h</a>.</p>
+<p>Definition at line <a class="el" href="_solution_8h_source.html#l00032">32</a> of file <a class="el" href="_solution_8h_source.html">Solution.h</a>.</p>
 
 </div>
 </div>
@@ -230,7 +264,7 @@ Private Attributes</h2></td></tr>
 
 <p>Stores the result computed by the chosen optimizer/algorithm object. </p>
 
-<p>Definition at line <a class="el" href="_solution_8h_source.html#l00028">28</a> of file <a class="el" href="_solution_8h_source.html">Solution.h</a>.</p>
+<p>Definition at line <a class="el" href="_solution_8h_source.html#l00031">31</a> of file <a class="el" href="_solution_8h_source.html">Solution.h</a>.</p>
 
 </div>
 </div>
@@ -241,7 +275,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 9 2014 23:31:50 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 10 2014 21:29:44 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

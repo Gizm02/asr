@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -98,14 +99,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab6a530c830bc62cff41c864ab070bdf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a72242874644c1736a347a74884645d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_optimizer.html#a3a72242874644c1736a347a74884645d">~SimpleOptimizer</a> ()</td></tr>
 <tr class="separator:a3a72242874644c1736a347a74884645d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a185967fd42a1e0d8d39686cccf82fd83"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_optimizer.html#a185967fd42a1e0d8d39686cccf82fd83">optimize</a> (<a class="el" href="class_context.html">Context</a> *context)</td></tr>
-<tr class="separator:a185967fd42a1e0d8d39686cccf82fd83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2b31116ab05c400db71e443f2ba9179"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_optimizer.html#ad2b31116ab05c400db71e443f2ba9179">optimize</a> (<a class="el" href="class_context.html">Context</a>&lt; <a class="el" href="class_simple_optimizer.html">SimpleOptimizer</a> &gt; *context, <a class="el" href="class_solution.html">Solution</a> *solution)</td></tr>
+<tr class="memdesc:ad2b31116ab05c400db71e443f2ba9179"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method optimizes the problem given by the context-obj.  <a href="#ad2b31116ab05c400db71e443f2ba9179">More...</a><br /></td></tr>
+<tr class="separator:ad2b31116ab05c400db71e443f2ba9179"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>&lt; For use of at(...) member method of std::array or rather std::vector. </p>
 <p>This enables throwing of exceptions by at(...) when array boundaries are hurt. </p>
 
-<p>Definition at line <a class="el" href="_simple_optimizer_8h_source.html#l00006">6</a> of file <a class="el" href="_simple_optimizer_8h_source.html">SimpleOptimizer.h</a>.</p>
+<p>Definition at line <a class="el" href="_simple_optimizer_8h_source.html#l00007">7</a> of file <a class="el" href="_simple_optimizer_8h_source.html">SimpleOptimizer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab6a530c830bc62cff41c864ab070bdf5"></a>
 <div class="memitem">
@@ -150,19 +152,38 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a185967fd42a1e0d8d39686cccf82fd83"></a>
+<a class="anchor" id="ad2b31116ab05c400db71e443f2ba9179"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double SimpleOptimizer::optimize </td>
+          <td class="memname">void SimpleOptimizer::optimize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_context.html">Context</a> *&#160;</td>
-          <td class="paramname"><em>context</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_context.html">Context</a>&lt; <a class="el" href="class_simple_optimizer.html">SimpleOptimizer</a> &gt; *&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_solution.html">Solution</a> *&#160;</td>
+          <td class="paramname"><em>solution</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This method optimizes the problem given by the context-obj. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>Provides input information. </td></tr>
+    <tr><td class="paramname">solution</td><td>Stores solution context, e.g. number of needed multiplications, the solution itself etc. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -173,7 +194,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 9 2014 23:31:50 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 10 2014 21:29:44 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

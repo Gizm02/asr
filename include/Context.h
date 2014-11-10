@@ -10,13 +10,14 @@
 #define K 3 /**< Total number of segments that have to be determined by the start-stop-detection. */
 #define T (K+1) /**< Total number of acoustic feature vectors that are taken into account. */
 template <class Optimizer>/**< This template variable stores the used algorithm. */
+
 class Context
 {
 //Using class here as typename is irrelevant but outlines the most that a class is to be expected for optimizer
 
     public:
         //Be careful, is an empty vector, elements must be added via push_back(T)
-        std::vector<double> energies(T);/**< This variable stores all the energies x_1,...,x_t */
+
         //double computeOptimum { simop.}
         Context();
         virtual ~Context();
@@ -28,6 +29,8 @@ class Context
         */
         double optimize();
 
+        std::vector<double> getEnergies();/**< Getter function for the energies stored by the context-obj. */
+
         /*! \brief  This function determines the local costs for inserting the vector x into a certain interval.
         *
         * \param   x   An acoustic feature vector
@@ -38,8 +41,9 @@ class Context
         double h(double x,double x_mean);
     protected:
     private:
+        std::vector<double> energies;/**< This variable stores all the energies x_1,...,x_t */
         Optimizer optimizer;/**< This represents the chosen algorithm. Must be determined/chosen at compile time. */
-        Solution *solution;/**< Pointer to an object that stores produced result context. */
+        Solution solution;/**< Pointer to an object that stores produced result context. */
 };
 
 #endif // CONTEXT_H

@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,24 +90,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="_solution_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_solution_8h.html">Solution.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="class_solution.html#a4b93db34a269b6386700aa8937ad9e45">    3</a></span>&#160;<a class="code" href="class_solution.html#a4b93db34a269b6386700aa8937ad9e45">Solution::Solution</a>(<span class="keywordtype">double</span> solution)</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    solution=<a class="code" href="class_solution.html#a57e7e3657c040845347b39816b605185">solution</a>;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="comment">//ctor</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_solution.html#a5d245f7409aacf6ace5e965b7879a580">    9</a></span>&#160;<a class="code" href="class_solution.html#a5d245f7409aacf6ace5e965b7879a580">Solution::~Solution</a>()</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">//dtor</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="ttc" id="class_solution_html_a4b93db34a269b6386700aa8937ad9e45"><div class="ttname"><a href="class_solution.html#a4b93db34a269b6386700aa8937ad9e45">Solution::Solution</a></div><div class="ttdeci">Solution(double solution)</div><div class="ttdef"><b>Definition:</b> <a href="_solution_8cpp_source.html#l00003">Solution.cpp:3</a></div></div>
-<div class="ttc" id="class_solution_html_a57e7e3657c040845347b39816b605185"><div class="ttname"><a href="class_solution.html#a57e7e3657c040845347b39816b605185">Solution::solution</a></div><div class="ttdeci">double solution</div><div class="ttdoc">Stores the result computed by the chosen optimizer/algorithm object. </div><div class="ttdef"><b>Definition:</b> <a href="_solution_8h_source.html#l00028">Solution.h:28</a></div></div>
-<div class="ttc" id="class_solution_html_a5d245f7409aacf6ace5e965b7879a580"><div class="ttname"><a href="class_solution.html#a5d245f7409aacf6ace5e965b7879a580">Solution::~Solution</a></div><div class="ttdeci">virtual ~Solution()</div><div class="ttdef"><b>Definition:</b> <a href="_solution_8cpp_source.html#l00009">Solution.cpp:9</a></div></div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="class_solution.html#a4b93db34a269b6386700aa8937ad9e45">    3</a></span>&#160;<a class="code" href="class_solution.html#ab55bd4b023d596ce11aaf737b9a6123b">Solution::Solution</a>(<span class="keywordtype">double</span> solution): multCount(0),solution(solution) { } <span class="comment">//C++11 element initialize list</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="class_solution.html#a5d245f7409aacf6ace5e965b7879a580">    5</a></span>&#160;<a class="code" href="class_solution.html#a5d245f7409aacf6ace5e965b7879a580">Solution::~Solution</a>()</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="comment">//dtor</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
+<div class="ttc" id="class_solution_html_a5d245f7409aacf6ace5e965b7879a580"><div class="ttname"><a href="class_solution.html#a5d245f7409aacf6ace5e965b7879a580">Solution::~Solution</a></div><div class="ttdeci">virtual ~Solution()</div><div class="ttdoc">Ctor delegation. </div><div class="ttdef"><b>Definition:</b> <a href="_solution_8cpp_source.html#l00005">Solution.cpp:5</a></div></div>
 <div class="ttc" id="_solution_8h_html"><div class="ttname"><a href="_solution_8h.html">Solution.h</a></div></div>
+<div class="ttc" id="class_solution_html_ab55bd4b023d596ce11aaf737b9a6123b"><div class="ttname"><a href="class_solution.html#ab55bd4b023d596ce11aaf737b9a6123b">Solution::Solution</a></div><div class="ttdeci">Solution()</div><div class="ttdef"><b>Definition:</b> <a href="_solution_8h_source.html#l00018">Solution.h:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 9 2014 23:31:50 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 10 2014 21:29:44 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

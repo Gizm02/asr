@@ -1,4 +1,18 @@
 # depslib dependency file v1.0
-1415562393 source:d:\documents\cpp_projects\asr\main.cpp
+1415649491 source:d:\documents\cpp_projects\asr\main.cpp
 	<iostream>
+	"Context.h"
+	"SimpleOptimizer.h"
+	"Solution.h"
+
+1415650227 d:\documents\cpp_projects\asr\include\context.h
+	<vector>
+	<cmath>
+	"Solution.h"
+
+1415648925 d:\documents\cpp_projects\asr\include\solution.h
+
+1415650804 d:\documents\cpp_projects\asr\include\simpleoptimizer.h
+	"Context.h"
+	<stdexcept>
 

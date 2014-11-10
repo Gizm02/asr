@@ -6,20 +6,28 @@
 #define OPTIMIZER   SimpleOptimizer
 using namespace std;
 
-Context::Context()
+template <class Optimizer>
+Context<Optimizer>::Context()
 {
     //ctor
 }
 
-
-double h(double x,double x_mean) {
+template <class Optimizer>
+double Context<Optimizer>::h(double x,double x_mean) {
     return ((pow((x-x_mean),2)));
 }
 
-double optimize() {
+template <class Optimizer>
+double Context<Optimizer>::optimize() {
     return 0;
 }
-Context::~Context()
+template <class Optimizer>
+vector<double> Context<Optimizer>::getEnergies() {
+    return energies;
+}
+
+template <class Optimizer>
+Context<Optimizer>::~Context()
 {
     //dtor
 }

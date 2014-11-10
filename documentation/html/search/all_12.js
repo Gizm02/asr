@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['v',['V',['../jquery_8js.html#a8b88915d3d3a06e98248a89807b077fa',1,'jquery.js']]]
+  ['updatestripes',['updateStripes',['../dynsections_8js.html#a8f7493ad859d4fbf2523917511ee7177',1,'dynsections.js']]]
 ];
