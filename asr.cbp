@@ -36,9 +36,11 @@
 		</Compiler>
 		<Unit filename="include/Context.h" />
 		<Unit filename="include/SimpleOptimizer.h" />
+		<Unit filename="include/Solution.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Context.cpp" />
 		<Unit filename="src/SimpleOptimizer.cpp" />
+		<Unit filename="src/Solution.cpp" />
 		<Extensions>
 			<DoxyBlocks>
 				<comment_style block="0" line="0" />
