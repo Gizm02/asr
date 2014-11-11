@@ -60,13 +60,22 @@ int main()
     }
     double globalCosts;/**< Stores the global cost for a segmentation. */
     double optimalCosts;/**< Stores the optimal cost found during iteration. */
+    vector<double> optimalIndexes(K+1,0);
+    optimalIndexes.at(0)=0;
+    optimalIndexes.at(K)=T;
     for(int i=0;i<(T-2);i++) {
         for(int j=i+1;j<(T-1);j++) {
             globalCosts=costs.at(i)+costs.at(i*K+j)+costs.at(j*K+K);
+
             optimalCosts=((globalCosts<optimalCosts)||i==0)?globalCosts:optimalCosts;
+            if ( globalCosts < optimalCosts || i == 0){
+                optimalCosts = globalCosts;
+                optimalIndexes.at(1) = i;
+                optimalIndexes.at(2) = j;
+            }
         }
     }
 
-    cout << optimalCosts << endl;
+    cout << optimalCosts << " " << optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
     return 0;
 }
