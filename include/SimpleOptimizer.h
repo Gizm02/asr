@@ -16,7 +16,8 @@ class SimpleOptimizer
          * \param solution Stores solution context, e.g. number of needed multiplications, the solution itself etc.
          *
          */
-        void optimize(Context<SimpleOptimizer>& context,Solution& solution);
+         template <class Optimizer>
+        void optimize(Context<Optimizer>& context,Solution& solution);
 
 
         /** \brief  Computes the mean of acoustic feature vectors within a fixed interval.

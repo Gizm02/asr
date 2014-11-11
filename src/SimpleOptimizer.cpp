@@ -5,8 +5,8 @@
 #define DEBUG 1
 using namespace std;
 
-
-void SimpleOptimizer::optimize(Context<SimpleOptimizer>& context,Solution& solution) {
+template <class Optimizer>
+void SimpleOptimizer::optimize(Context<Optimizer>& context,Solution& solution) {
     vector<double> energies=context.getEnergies();
 
     #if DEBUG>0
@@ -23,7 +23,7 @@ void SimpleOptimizer::optimize(Context<SimpleOptimizer>& context,Solution& solut
     for(int i=0;i<(T-2);i++) {
         for(int j=i+1;j<(T-1);j++) {
             ///Determine the mean for the intervall [t_i,t_j]
-            mean=getMean(energies,i,j);
+            mean=this->getMean(energies,i,j);
             #if DEBUG>0
             assert(mean>0);
             #endif
@@ -45,11 +45,11 @@ void SimpleOptimizer::optimize(Context<SimpleOptimizer>& context,Solution& solut
     solution.setSolution(optimalCosts);/**< Store the result in the solution obj. */
 }
 
-vector<double> getCosts() {
+vector<double> SimpleOptimizer::getCosts() {
     return costs;
 }
 
-double getMean(const std::vector<double>& energies, int i, int j) {
+double SimpleOptimizer::getMean(const std::vector<double>& energies, int i, int j) {
     double mean=0;
     for(int k=0;k<=(j-i);k++) {
         mean+=energies.at(i*K+k);

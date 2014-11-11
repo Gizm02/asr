@@ -12,7 +12,7 @@
 
 1415663421 d:\documents\cpp_projects\asr\include\solution.h
 
-1415729801 d:\documents\cpp_projects\asr\include\simpleoptimizer.h
+1415730588 d:\documents\cpp_projects\asr\include\simpleoptimizer.h
 	<stdlib.h>
 	<array>
 	"Context.h"
@@ -20,10 +20,12 @@
 1415661646 source:d:\documents\cpp_projects\asr\src\context.cpp
 	"Context.h"
 
-1415658618 source:d:\documents\cpp_projects\asr\src\simpleoptimizer.cpp
+1415730243 source:d:\documents\cpp_projects\asr\src\simpleoptimizer.cpp
 	"SimpleOptimizer.h"
 	<iostream>
+	<stdexcept>
+	<assert.h>
 
-1415659954 source:d:\documents\cpp_projects\asr\src\solution.cpp
+1415663414 source:d:\documents\cpp_projects\asr\src\solution.cpp
 	"Solution.h"
 
