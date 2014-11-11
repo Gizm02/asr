@@ -18,10 +18,15 @@ int main()
 
     if(!file) { exit(EXIT_FAILURE);}
     string line;
-    vector<double> energies;
+    vector<double>& energies = *(new vector<double>());
     while(getline(file,line)){
         energies.push_back(strtod(line.c_str(),NULL));
     }
+    /*
+    context.setEnergies(energies);
+    vector<double>& test = context.getEnergies();
+    cout << test.first() << endl;
+    */
 
 
 /********************************************//**

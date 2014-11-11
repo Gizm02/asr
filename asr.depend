@@ -32,3 +32,36 @@
 1415663414 source:d:\documents\cpp_projects\asr\src\solution.cpp
 	"Solution.h"
 
+1415733168 source:c:\users\slyforce\documents\github\asr\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+	"Context.h"
+	"SimpleOptimizer.h"
+	"Solution.h"
+
+1415733272 c:\users\slyforce\documents\github\asr\include\context.h
+	<vector>
+	<cmath>
+	"Solution.h"
+
+1415728832 c:\users\slyforce\documents\github\asr\include\solution.h
+
+1415730804 c:\users\slyforce\documents\github\asr\include\simpleoptimizer.h
+	<stdlib.h>
+	<array>
+	"Context.h"
+
+1415733268 source:c:\users\slyforce\documents\github\asr\src\context.cpp
+	"Context.h"
+
+1415730804 source:c:\users\slyforce\documents\github\asr\src\simpleoptimizer.cpp
+	"SimpleOptimizer.h"
+	<iostream>
+	<stdexcept>
+	<assert.h>
+
+1415728832 source:c:\users\slyforce\documents\github\asr\src\solution.cpp
+	"Solution.h"
+

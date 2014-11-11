@@ -16,7 +16,10 @@ double Context<Optimizer>::optimize() {
 
     return 0;
 }
-
+template <class Optimizer>
+void Context<Optimizer>::setEnergies(std::vector<double>& energies){
+    this->energies = energies;
+}
 template <class Optimizer>
 vector<double>& Context<Optimizer>::getEnergies() {
     return energies;

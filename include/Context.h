@@ -28,7 +28,7 @@ class Context
         *
         */
         double optimize();
-
+        void setEnergies(std::vector<double>& energies);
         std::vector<double>& getEnergies();/**< Getter function for the energies stored by the context-obj. */
 
         /*! \brief  This function determines the local costs for inserting the vector x into a certain interval.
