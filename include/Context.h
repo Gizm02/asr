@@ -19,8 +19,10 @@ class Context
         //Be careful, is an empty vector, elements must be added via push_back(T)
 
         //double computeOptimum { simop.}
-        Context();
-        virtual ~Context();
+        template <class Optimizer>
+        Context<Optimizer>();
+        template <class Optimizer>
+        virtual ~Context<Optimizer>();
 
         /*! \brief  This function optimizes the segmentation of the input vectors.
         *
@@ -28,7 +30,7 @@ class Context
         *
         */
         double optimize();
-
+        void setEnergies(std::vector<double> energies);
         std::vector<double>& getEnergies();/**< Getter function for the energies stored by the context-obj. */
 
         /*! \brief  This function determines the local costs for inserting the vector x into a certain interval.

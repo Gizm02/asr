@@ -13,14 +13,21 @@ double Context<Optimizer>::h(double x,double x_mean) {
 
 template <class Optimizer>
 double Context<Optimizer>::optimize() {
-
     return 0;
 }
 
 template <class Optimizer>
+void Context<Optimizer>::setEnergies(std::vector<double> energies){
+    this->energies = energies;
+}
+template <class Optimizer>
 vector<double>& Context<Optimizer>::getEnergies() {
     return energies;
 }
+
+template <class Optimizer>
+Context<Optimizer>::Context() {}
+
 
 template <class Optimizer>
 Context<Optimizer>::~Context()

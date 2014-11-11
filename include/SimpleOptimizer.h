@@ -7,7 +7,7 @@
 class SimpleOptimizer
 {
     public:
-        SimpleOptimizer():costs(T*T) { };
+        SimpleOptimizer();
         virtual ~SimpleOptimizer();
 
         /** \brief This method optimizes the problem given by the context-obj.
@@ -33,7 +33,6 @@ class SimpleOptimizer
         std::vector<double> getCosts();
     protected:
     private:
-
         std::vector<double> costs;/**< The cost matrix. */
 };
 
