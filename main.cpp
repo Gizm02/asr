@@ -4,11 +4,11 @@
 #include <vector>
 #include <math.h>
 #include <stdlib.h>
-
+#include <assert.h>
 #include "Context.h"
 #include "SimpleOptimizer.h"
 #include "Solution.h"
-
+#define DEBUG 1
 #define K 3
 
 using namespace std;
