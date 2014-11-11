@@ -10,7 +10,6 @@
 #define K 3 /**< Total number of segments that have to be determined by the start-stop-detection. */
 #define T (K+1) /**< Total number of acoustic feature vectors that are taken into account. */
 template <class Optimizer>/**< This template variable stores the used algorithm. */
-
 class Context
 {
 //Using class here as typename is irrelevant but outlines the most that a class is to be expected for optimizer
@@ -19,9 +18,7 @@ class Context
         //Be careful, is an empty vector, elements must be added via push_back(T)
 
         //double computeOptimum { simop.}
-        template <class Optimizer>
         Context<Optimizer>();
-        template <class Optimizer>
         virtual ~Context<Optimizer>();
 
         /*! \brief  This function optimizes the segmentation of the input vectors.
