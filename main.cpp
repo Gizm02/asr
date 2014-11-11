@@ -18,7 +18,7 @@ double h(double x,double x_mean) {
 double getMean(vector<double>& energies, size_t i, size_t j){
     double mean=0;
     for(int k=0;k<=(j-i);k++) {
-        mean+=energies.at(i*K+k);
+        mean+=energies.at(i+k);
     }
     mean*=1.0/(j-i);
     return mean;
@@ -67,5 +67,6 @@ int main()
         }
     }
 
+    cout << optimalCosts << endl;
     return 0;
 }

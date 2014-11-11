@@ -53,15 +53,9 @@
 	<array>
 	"Context.h"
 
-1415733268 source:c:\users\slyforce\documents\github\asr\src\context.cpp
-	"Context.h"
+1415741189 source:c:\users\slyforce\documents\github\asr\src\context.cpp
 
-1415730804 source:c:\users\slyforce\documents\github\asr\src\simpleoptimizer.cpp
-	"SimpleOptimizer.h"
-	<iostream>
-	<stdexcept>
-	<assert.h>
+1415741189 source:c:\users\slyforce\documents\github\asr\src\simpleoptimizer.cpp
 
-1415728832 source:c:\users\slyforce\documents\github\asr\src\solution.cpp
-	"Solution.h"
+1415741189 source:c:\users\slyforce\documents\github\asr\src\solution.cpp
 
