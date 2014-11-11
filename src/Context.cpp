@@ -13,6 +13,7 @@ double Context<Optimizer>::h(double x,double x_mean) {
 
 template <class Optimizer>
 double Context<Optimizer>::optimize() {
+
     return 0;
 }
 

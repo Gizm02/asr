@@ -41,7 +41,7 @@ class Context
         double h(double x,double x_mean);
     protected:
     private:
-        std::vector<double> energies;/**< This variable stores all the energies x_1,...,x_t */
+        std::vector<double> energies;/**< This variable stores all the energies x_1,...,x_T */
         Optimizer optimizer;/**< This represents the chosen algorithm. Must be determined/chosen at compile time. */
         Solution solution;/**< Pointer to an object that stores produced result context. */
 };
