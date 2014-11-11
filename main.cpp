@@ -71,7 +71,7 @@ int main()
         for(int j=i+1;j<(T-1);j++) {
             globalCosts=costs.at(i)+costs.at(i*K+j)+costs.at(j*K+K);
             if ( globalCosts < optimalCosts){
-                optimalCosts = globalCosts;
+                //optimalCosts = globalCosts;
                 optimalIndexes.at(1) = i;
                 optimalIndexes.at(2) = j;
             }
