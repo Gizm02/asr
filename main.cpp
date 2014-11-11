@@ -1,7 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
+#include <vector>
+#include <math.h>
 #include <stdlib.h>
 
 #include "Context.h"
@@ -42,6 +43,7 @@ int main()
     double mean=0;
     size_t T = energies.size();
     ///Set up the cost matrix
+    vector<double> costs(T*T);
     for(int i=0;i<(T-2);i++) {
         for(int j=i+1;j<(T-1);j++) {
             ///Determine the mean for the intervall [t_i,t_j]
@@ -51,7 +53,7 @@ int main()
             #endif
             double localCost=0;
             for(int k=0;k<(j-i);k++) {
-                localCost+=context.h(energies.at(i+k),mean);
+                localCost+=h(energies.at(i+k),mean);
             }
             costs.at(i*K+j)=localCost;
         }
@@ -64,7 +66,6 @@ int main()
             optimalCosts=((globalCosts<optimalCosts)||i==0)?globalCosts:optimalCosts;
         }
     }
-    solution.setSolution(optimalCosts);/**< Store the result in the solution obj. */
 
     return 0;
 }
