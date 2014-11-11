@@ -18,9 +18,7 @@ class SimpleOptimizer
          */
         void optimize(Context<SimpleOptimizer>& context,Solution& solution);
 
-        std::vector<double> getCosts();
-    protected:
-    private:
+
         /** \brief  Computes the mean of acoustic feature vectors within a fixed interval.
          *
          * \param   energies Reference to a reference containing the acoustic feature vectors that are taken into account.
@@ -30,6 +28,11 @@ class SimpleOptimizer
          *
          */
         double getMean(const std::vector<double>& energies, int i, int j);
+
+        std::vector<double> getCosts();
+    protected:
+    private:
+
         std::vector<double> costs;/**< The cost matrix. */
 };
 

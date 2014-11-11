@@ -5,15 +5,14 @@
 #define DEBUG 1
 using namespace std;
 
-template <class Optimizer>
-void optimize(Context<Optimizer>& context,Solution& solution) {
+
+void SimpleOptimizer::optimize(Context<SimpleOptimizer>& context,Solution& solution) {
     vector<double> energies=context.getEnergies();
-    size_t S=static_cast<size_t>(energies.size());
 
     #if DEBUG>0
     ///Test if the vectors are copied correctly
-    for(int i=0;i<S;i++) {
-        if(energies.at(i)!=context->getEnergies().at(i)) {
+    for(int i=0;i<T;i++) {
+        if(energies.at(i)!=context.getEnergies().at(i)) {
             cout<<"Vector copying did not work! FAILURE AT FILE"<< __FILE__<<",line "<<__LINE__ <<endl;
             exit(EXIT_FAILURE);
         }
@@ -21,8 +20,8 @@ void optimize(Context<Optimizer>& context,Solution& solution) {
     #endif // DEBUG
     double mean=0;
     ///Set up the cost matrix
-    for(int i=0;i<(K-2);i++) {
-        for(int j=i+1;j<(K-1);j++) {
+    for(int i=0;i<(T-2);i++) {
+        for(int j=i+1;j<(T-1);j++) {
             ///Determine the mean for the intervall [t_i,t_j]
             mean=getMean(energies,i,j);
             #if DEBUG>0
@@ -30,15 +29,15 @@ void optimize(Context<Optimizer>& context,Solution& solution) {
             #endif
             double localCost=0;
             for(int k=0;k<(j-i);k++) {
-                localCost+=context->h(energies.at(i+k),mean);
+                localCost+=context.h(energies.at(i+k),mean);
             }
             costs.at(i*K+j)=localCost;
         }
     }
     double globalCosts;/**< Stores the global cost for a segmentation. */
     double optimalCosts;/**< Stores the optimal cost found during iteration. */
-    for(int i=0;i<(K-2);i++) {
-        for(int j=i+1;j<(K-1);j++) {
+    for(int i=0;i<(T-2);i++) {
+        for(int j=i+1;j<(T-1);j++) {
             globalCosts=costs.at(i)+costs.at(i*K+j)+costs.at(j*K+K);
             optimalCosts=((globalCosts<optimalCosts)||i==0)?globalCosts:optimalCosts;
         }
