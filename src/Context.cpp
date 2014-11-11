@@ -18,7 +18,7 @@ double Context<Optimizer>::optimize() {
 }
 
 template <class Optimizer>
-vector<double> Context<Optimizer>::getEnergies() {
+vector<double>& Context<Optimizer>::getEnergies() {
     return energies;
 }
 
