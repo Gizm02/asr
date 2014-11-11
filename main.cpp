@@ -68,7 +68,7 @@ int main()
             globalCosts=costs.at(i)+costs.at(i*K+j)+costs.at(j*K+K);
 
             optimalCosts=((globalCosts<optimalCosts)||i==0)?globalCosts:optimalCosts;
-            if ( globalCosts < optimalCosts || i == 0){
+            if ( globalCosts < optimalCosts){
                 optimalCosts = globalCosts;
                 optimalIndexes.at(1) = i;
                 optimalIndexes.at(2) = j;
