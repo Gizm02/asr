@@ -83,6 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">SimpleOptimizer Class Reference</div>  </div>
@@ -100,19 +101,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad2b31116ab05c400db71e443f2ba9179"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_optimizer.html#ad2b31116ab05c400db71e443f2ba9179">optimize</a> (<a class="el" href="class_context.html">Context</a>&lt; <a class="el" href="class_simple_optimizer.html">SimpleOptimizer</a> &gt; *context, <a class="el" href="class_solution.html">Solution</a> *solution)</td></tr>
 <tr class="memdesc:ad2b31116ab05c400db71e443f2ba9179"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method optimizes the problem given by the context-obj.  <a href="#ad2b31116ab05c400db71e443f2ba9179">More...</a><br /></td></tr>
 <tr class="separator:ad2b31116ab05c400db71e443f2ba9179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9057bf505f0b4d3aee3cc24ddb2b4dca"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_optimizer.html#a9057bf505f0b4d3aee3cc24ddb2b4dca">getCosts</a> ()</td></tr>
+<tr class="separator:a9057bf505f0b4d3aee3cc24ddb2b4dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:af22c2f67f650dec11aab399583b3a8d5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_optimizer.html#af22c2f67f650dec11aab399583b3a8d5">getMean</a> (const std::vector&lt; double &gt; &amp;energies, int i, int j)</td></tr>
+<tr class="memdesc:af22c2f67f650dec11aab399583b3a8d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the mean of acoustic feature vectors within a fixed interval.  <a href="#af22c2f67f650dec11aab399583b3a8d5">More...</a><br /></td></tr>
+<tr class="separator:af22c2f67f650dec11aab399583b3a8d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:af8a035826037025a634e83e05227d286"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_optimizer.html#af8a035826037025a634e83e05227d286">costs</a></td></tr>
+<tr class="memdesc:af8a035826037025a634e83e05227d286"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cost matrix.  <a href="#af8a035826037025a634e83e05227d286">More...</a><br /></td></tr>
 <tr class="separator:af8a035826037025a634e83e05227d286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_simple_optimizer_8h_source.html#l00006">6</a> of file <a class="el" href="_simple_optimizer_8h_source.html">SimpleOptimizer.h</a>.</p>
+<p>Definition at line <a class="el" href="_simple_optimizer_8h_source.html#l00007">7</a> of file <a class="el" href="_simple_optimizer_8h_source.html">SimpleOptimizer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab6a530c830bc62cff41c864ab070bdf5"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">SimpleOptimizer::SimpleOptimizer </td>
@@ -121,9 +134,14 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_simple_optimizer_8cpp_source.html#l00006">6</a> of file <a class="el" href="_simple_optimizer_8cpp_source.html">SimpleOptimizer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_optimizer_8h_source.html#l00010">10</a> of file <a class="el" href="_simple_optimizer_8h_source.html">SimpleOptimizer.h</a>.</p>
 
 </div>
 </div>
@@ -148,11 +166,77 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_simple_optimizer_8cpp_source.html#l00049">49</a> of file <a class="el" href="_simple_optimizer_8cpp_source.html">SimpleOptimizer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_optimizer_8cpp_source.html#l00062">62</a> of file <a class="el" href="_simple_optimizer_8cpp_source.html">SimpleOptimizer.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9057bf505f0b4d3aee3cc24ddb2b4dca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; SimpleOptimizer::getCosts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af22c2f67f650dec11aab399583b3a8d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double SimpleOptimizer::getMean </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>energies</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the mean of acoustic feature vectors within a fixed interval. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">energies</td><td>Reference to a reference containing the acoustic feature vectors that are taken into account. </td></tr>
+    <tr><td class="paramname">i</td><td>The lower index of lower interval bound. </td></tr>
+    <tr><td class="paramname">j</td><td>The bigger index of the upper interval bound. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The mean of the vectors. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ad2b31116ab05c400db71e443f2ba9179"></a>
 <div class="memitem">
 <div class="memproto">
@@ -207,7 +291,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_simple_optimizer_8h_source.html#l00021">21</a> of file <a class="el" href="_simple_optimizer_8h_source.html">SimpleOptimizer.h</a>.</p>
+<p>The cost matrix. </p>
+
+<p>Definition at line <a class="el" href="_simple_optimizer_8h_source.html#l00033">33</a> of file <a class="el" href="_simple_optimizer_8h_source.html">SimpleOptimizer.h</a>.</p>
 
 </div>
 </div>
@@ -218,7 +304,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 11 2014 00:16:04 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 11 2014 18:33:02 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

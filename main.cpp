@@ -10,7 +10,8 @@ int main()
 {
 
     Context<SimpleOptimizer> context();
-    float a; /*!< Detailed description after the member */
-    cout << "Hello world!" << endl;
+/********************************************//**
+ *  Read in data from probe1.ascii here, initialize needed objects etc.
+ ***********************************************/
     return 0;
 }

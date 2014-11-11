@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['k',['K',['../_context_8h.html#a97d832ae23af4f215e801e37e4f94254',1,'Context.h']]]
+  ['debug',['DEBUG',['../_simple_optimizer_8cpp.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'SimpleOptimizer.cpp']]]
 ];

@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="comment">//Be careful, is an empty vector, elements must be added via push_back(T)</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">//double computeOptimum { simop.}</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_context.html">Context</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_context.html#ad7dcfa9e760df9285606c289e2c5c402">   22</a></span>&#160;        <a class="code" href="class_context.html#ad7dcfa9e760df9285606c289e2c5c402">Context</a>():energies(<a class="code" href="_context_8h.html#a0acb682b8260ab1c60b918599864e2e5">T</a>){ };</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="class_context.html">Context</a>();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="_simple_optimizer_8cpp.html#a20d55de67dfdbf842c8593f9fb87862f">optimize</a>();</div>
@@ -120,18 +120,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif // CONTEXT_H</span></div>
-<div class="ttc" id="_simple_optimizer_8cpp_html_a20d55de67dfdbf842c8593f9fb87862f"><div class="ttname"><a href="_simple_optimizer_8cpp.html#a20d55de67dfdbf842c8593f9fb87862f">optimize</a></div><div class="ttdeci">void optimize(Context&lt; Optimizer &gt; *context, Solution *solution)</div><div class="ttdef"><b>Definition:</b> <a href="_simple_optimizer_8cpp_source.html#l00012">SimpleOptimizer.cpp:12</a></div></div>
+<div class="ttc" id="_simple_optimizer_8cpp_html_a20d55de67dfdbf842c8593f9fb87862f"><div class="ttname"><a href="_simple_optimizer_8cpp.html#a20d55de67dfdbf842c8593f9fb87862f">optimize</a></div><div class="ttdeci">void optimize(Context&lt; Optimizer &gt; *context, Solution *solution)</div><div class="ttdef"><b>Definition:</b> <a href="_simple_optimizer_8cpp_source.html#l00009">SimpleOptimizer.cpp:9</a></div></div>
 <div class="ttc" id="class_context_html_ae10d37724764656182fa3ac2b206b123"><div class="ttname"><a href="class_context.html#ae10d37724764656182fa3ac2b206b123">Context::optimizer</a></div><div class="ttdeci">Optimizer optimizer</div><div class="ttdoc">This represents the chosen algorithm. </div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00045">Context.h:45</a></div></div>
 <div class="ttc" id="class_context_html_a4a7878f8bab232b8b09305c10ebf392b"><div class="ttname"><a href="class_context.html#a4a7878f8bab232b8b09305c10ebf392b">Context::solution</a></div><div class="ttdeci">Solution solution</div><div class="ttdoc">Pointer to an object that stores produced result context. </div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00046">Context.h:46</a></div></div>
 <div class="ttc" id="jquery_8js_html_a4c3eadaa5164016d2c340d495fc6e55e"><div class="ttname"><a href="jquery_8js.html#a4c3eadaa5164016d2c340d495fc6e55e">x</a></div><div class="ttdeci">function x(bx)</div><div class="ttdef"><b>Definition:</b> <a href="jquery_8js_source.html#l00030">jquery.js:30</a></div></div>
 <div class="ttc" id="class_solution_html"><div class="ttname"><a href="class_solution.html">Solution</a></div><div class="ttdoc">This class encapsulates solution context produced by the applied algorithms. </div><div class="ttdef"><b>Definition:</b> <a href="_solution_8h_source.html#l00009">Solution.h:9</a></div></div>
+<div class="ttc" id="_context_8h_html_a0acb682b8260ab1c60b918599864e2e5"><div class="ttname"><a href="_context_8h.html#a0acb682b8260ab1c60b918599864e2e5">T</a></div><div class="ttdeci">#define T</div><div class="ttdoc">Total number of acoustic feature vectors that are taken into account. </div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00011">Context.h:11</a></div></div>
+<div class="ttc" id="class_context_html_ad7dcfa9e760df9285606c289e2c5c402"><div class="ttname"><a href="class_context.html#ad7dcfa9e760df9285606c289e2c5c402">Context::Context</a></div><div class="ttdeci">Context()</div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00022">Context.h:22</a></div></div>
 <div class="ttc" id="class_context_html"><div class="ttname"><a href="class_context.html">Context</a></div><div class="ttdoc">< This template variable stores the used algorithm. </div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00014">Context.h:14</a></div></div>
 <div class="ttc" id="_solution_8h_html"><div class="ttname"><a href="_solution_8h.html">Solution.h</a></div></div>
 <div class="ttc" id="class_context_html_af8244158b034347bbea0c584129497ab"><div class="ttname"><a href="class_context.html#af8244158b034347bbea0c584129497ab">Context::energies</a></div><div class="ttdeci">std::vector&lt; double &gt; energies</div><div class="ttdoc">This variable stores all the energies x_1,...,x_t. </div><div class="ttdef"><b>Definition:</b> <a href="_context_8h_source.html#l00044">Context.h:44</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 11 2014 00:16:04 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 11 2014 18:33:02 for ASR by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
