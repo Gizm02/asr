@@ -8,15 +8,13 @@
 #include "Context.h"
 #include "SimpleOptimizer.h"
 #include "Solution.h"
-#define DEBUG 1
+#define DEBUG 0
+#define FROMFILE 1
 #define K 3
 
 using namespace std;
 double h(double x,double x_mean) {
     double val=((pow((x-x_mean),2)));
-    if(val==0) {
-        cout<<"Thats bad"<<endl;
-    }
     return val;
 }
 double getMean(vector<double>& energies, size_t i, size_t j){
@@ -29,6 +27,8 @@ double getMean(vector<double>& energies, size_t i, size_t j){
 }
 int main()
 {
+    vector<double> energies;
+    #if FROMFILE==0
     ifstream file("material/u3/probe1.ascii.txt");
 
     if(!file) { exit(EXIT_FAILURE);}
@@ -42,7 +42,19 @@ int main()
     vector<double>& test = context.getEnergies();
     cout << test.first() << endl;
     */
-
+    #endif
+    #if FROMFILE>0
+    energies.push_back(0);
+    energies.push_back(0);
+    energies.push_back(0);
+    energies.push_back(0);
+    energies.push_back(5);
+    energies.push_back(5);
+    energies.push_back(5);
+    energies.push_back(0);
+    energies.push_back(0);
+    energies.push_back(0);
+    #endif
     ///Test if the vectors are copied correctly
     double mean=0;
     size_t T = energies.size();
@@ -58,12 +70,19 @@ int main()
             double localCost=0;
             for(int k=0;k<(j-i);k++) {
                 localCost+=h(energies.at(i+k),mean);
+                cout<<localCost<<" ";
             }
+            cout<<endl;
             costs.at(i*K+j)=localCost;
         }
     }
+    #if DEBUG>0
+    for(const auto &element: costs) {
+        cout<<element<<" ";
+    }
+    #endif // DEBUG
     double globalCosts;/**< Stores the global cost for a segmentation. */
-    double optimalCosts;/**< Stores the optimal cost found during iteration. */
+    double optimalCosts=10e10;/**< Stores the optimal cost found during iteration. */
     vector<double> optimalIndexes(K+1,0);
     optimalIndexes.at(0)=0;
     optimalIndexes.at(K)=T;
@@ -71,6 +90,7 @@ int main()
         for(int j=i+1;j<(T-1);j++) {
             globalCosts=costs.at(i)+costs.at(i*K+j)+costs.at(j*K+K);
             if ( globalCosts < optimalCosts){
+                    cout<<"New minimal costs are:"<<globalCosts<<endl;
                 //optimalCosts = globalCosts;
                 optimalIndexes.at(1) = i;
                 optimalIndexes.at(2) = j;
