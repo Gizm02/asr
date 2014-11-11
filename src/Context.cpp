@@ -1,11 +1,8 @@
-#include "Context.h"
-/** \brief By using this define, it is easier to exchange the Optimizers we want to apply on our context object.
- *
- *  Example usage: #define OPTIMIZER MyOptimizerImplementation
- */
+/*#include "Context.h"
+
 
 using namespace std;
-/*
+
 
 Context<Optimizer>::Context() {}
 

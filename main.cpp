@@ -25,6 +25,7 @@ int main()
     SimpleOptimizer simp;
     Solution sol;
     Context<SimpleOptimizer> context(simp,sol,energies);
+    simp.optimize(context,sol);
     //context.setEnergies(energies);
     /*
     context.setEnergies(energies);

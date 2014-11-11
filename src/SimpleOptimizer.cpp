@@ -33,7 +33,7 @@ void SimpleOptimizer::optimize(Context<Optimizer>& context,Solution& solution) {
             for(int k=0;k<(j-i);k++) {
                 localCost+=context.h(energies.at(i+k),mean);
             }
-            costs.at(i*K+j)=localCost;
+            costs.push_back(i*K+j)=localCost;
         }
     }
     double globalCosts;/**< Stores the global cost for a segmentation. */
