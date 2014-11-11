@@ -5,6 +5,16 @@
  */
 
 using namespace std;
+/*
+
+Context<Optimizer>::Context() {}
+
+
+template <class Optimizer>
+Context<Optimizer>::~Context()
+{
+    //dtor
+}
 
 template <class Optimizer>
 double Context<Optimizer>::h(double x,double x_mean) {
@@ -25,12 +35,4 @@ vector<double>& Context<Optimizer>::getEnergies() {
     return energies;
 }
 
-template <class Optimizer>
-Context<Optimizer>::Context() {}
-
-
-template <class Optimizer>
-Context<Optimizer>::~Context()
-{
-    //dtor
-}
+*/

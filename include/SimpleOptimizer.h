@@ -36,4 +36,5 @@ class SimpleOptimizer
         std::vector<double> costs;/**< The cost matrix. */
 };
 
+
 #endif // SIMPLEOPTIMIZER_H

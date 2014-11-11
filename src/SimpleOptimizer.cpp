@@ -3,12 +3,14 @@
 #include <stdexcept>/**< For use of at(...) member method of std::array or rather std::vector. This enables throwing of exceptions by at(...) when array boundaries are violated.*/
 #include <assert.h>
 #define DEBUG 1
+
+
 using namespace std;
 
 template <class Optimizer>
 void SimpleOptimizer::optimize(Context<Optimizer>& context,Solution& solution) {
     vector<double> energies=context.getEnergies();
-
+    std::size_t T=static_cast<size_t>(context.getEnergies().size());
     #if DEBUG>0
     ///Test if the vectors are copied correctly
     for(int i=0;i<T;i++) {
@@ -52,12 +54,13 @@ vector<double> SimpleOptimizer::getCosts() {
 double SimpleOptimizer::getMean(const std::vector<double>& energies, int i, int j) {
     double mean=0;
     for(int k=0;k<=(j-i);k++) {
-        mean+=energies.at(i*K+k);
+        mean+=energies.at(i+k);
     }
     mean*=1.0/(j-i);
     return mean;
 }
 
+SimpleOptimizer::SimpleOptimizer() {}
 SimpleOptimizer::~SimpleOptimizer()
 {
     //dtor

@@ -18,8 +18,9 @@ class Context
         //Be careful, is an empty vector, elements must be added via push_back(T)
 
         //double computeOptimum { simop.}
-        Context<Optimizer>();
-        virtual ~Context<Optimizer>();
+        Context(Optimizer& opt,Solution& sol,std::vector<double>& en):optimizer(opt),solution(sol),energies(en) {};
+        Context();
+        virtual ~Context();
 
         /*! \brief  This function optimizes the segmentation of the input vectors.
         *
@@ -41,8 +42,35 @@ class Context
     protected:
     private:
         std::vector<double>& energies;/**< This variable stores all the energies x_1,...,x_T */
-        Optimizer optimizer;/**< This represents the chosen algorithm. Must be determined/chosen at compile time. */
-        Solution solution;/**< Pointer to an object that stores produced result context. */
+        Optimizer& optimizer;/**< This represents the chosen algorithm. Must be determined/chosen at compile time. */
+        Solution& solution;/**< Pointer to an object that stores produced result context. */
 };
 
+
+
+
+template <class Optimizer>
+Context<Optimizer>::~Context()
+{
+    //dtor
+}
+
+template <class Optimizer>
+double Context<Optimizer>::h(double x,double x_mean) {
+    return ((pow((x-x_mean),2)));
+}
+
+template <class Optimizer>
+double Context<Optimizer>::optimize() {
+    return 0;
+}
+
+template <class Optimizer>
+void Context<Optimizer>::setEnergies(std::vector<double> energies){
+    this->energies = energies;
+}
+template <class Optimizer>
+std::vector<double>& Context<Optimizer>::getEnergies() {
+    return energies;
+}
 #endif // CONTEXT_H
