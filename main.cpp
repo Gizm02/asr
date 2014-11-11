@@ -13,7 +13,11 @@
 
 using namespace std;
 double h(double x,double x_mean) {
-    return ((pow((x-x_mean),2)));
+    double val=((pow((x-x_mean),2)));
+    if(val==0) {
+        cout<<"Thats bad"<<endl;
+    }
+    return val;
 }
 double getMean(vector<double>& energies, size_t i, size_t j){
     double mean=0;
@@ -49,7 +53,7 @@ int main()
             ///Determine the mean for the intervall [t_i,t_j]
             mean=getMean(energies,i,j);
             #if DEBUG>0
-            assert(mean>0);
+            assert(mean!=0);
             #endif
             double localCost=0;
             for(int k=0;k<(j-i);k++) {
@@ -66,13 +70,12 @@ int main()
     for(int i=0;i<(T-2);i++) {
         for(int j=i+1;j<(T-1);j++) {
             globalCosts=costs.at(i)+costs.at(i*K+j)+costs.at(j*K+K);
-
-            optimalCosts=((globalCosts<optimalCosts)||i==0)?globalCosts:optimalCosts;
             if ( globalCosts < optimalCosts){
                 optimalCosts = globalCosts;
                 optimalIndexes.at(1) = i;
                 optimalIndexes.at(2) = j;
             }
+            optimalCosts=((globalCosts<optimalCosts)||i==0)?globalCosts:optimalCosts;
         }
     }
 
