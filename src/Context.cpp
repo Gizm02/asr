@@ -3,7 +3,7 @@
  *
  *  Example usage: #define OPTIMIZER MyOptimizerImplementation
  */
-#define OPTIMIZER   SimpleOptimizer
+
 using namespace std;
 
 template <class Optimizer>
