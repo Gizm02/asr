@@ -9,11 +9,15 @@
 #include "SimpleOptimizer.h"
 #include "Solution.h"
 #define DEBUG 1
+
 #define K 3
 
 using namespace std;
 double h(double x,double x_mean) {
-    return (pow((x-x_mean),2));
+
+    double val=((pow((x-x_mean),2)));
+
+    return val;
 }
 double getMean(vector<double>& energies, size_t i, size_t j){
     double mean=0;
@@ -59,7 +63,9 @@ int main()
             mean = getMean(energies,i,j);
             costs.at(i*T+j) = h(energies.at(i),mean);
             cout << mean << " " << costs.at(i*T+j) << endl;
+
         }
+        cout << endl;
     }
     #if DEBUG>0
     for(const auto &element: costs) {
@@ -80,7 +86,9 @@ int main()
                 optimalIndexes.at(1) = i;
                 optimalIndexes.at(2) = j;
             }
-            optimalCosts=((globalCosts<optimalCosts)||(i==0 && j==1))?globalCosts:optimalCosts;
+
+            optimalCosts=((globalCosts<optimalCosts)||i==0&& j==1)?globalCosts:optimalCosts;
+
         }
     }
 
