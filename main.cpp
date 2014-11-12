@@ -5,18 +5,14 @@
 #include <math.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "Context.h"
-#include "SimpleOptimizer.h"
-#include "Solution.h"
+
 #define DEBUG 1
 #define K 3
 
 using namespace std;
 double h(double x,double x_mean) {
     double val=((pow((x-x_mean),2)));
-    if(val==0) {
-        cout<<"Thats bad"<<endl;
-    }
+    
     return val;
 }
 double getMean(vector<double>& energies, size_t i, size_t j){
@@ -58,9 +54,12 @@ int main()
             double localCost=0;
             for(int k=0;k<(j-i);k++) {
                 localCost+=h(energies.at(i+k),mean);
+                
             }
+            cout << localCost << " " ;
             costs.at(i*K+j)=localCost;
         }
+        cout << endl;
     }
     double globalCosts;/**< Stores the global cost for a segmentation. */
     double optimalCosts;/**< Stores the optimal cost found during iteration. */
@@ -75,7 +74,7 @@ int main()
                 optimalIndexes.at(1) = i;
                 optimalIndexes.at(2) = j;
             }
-            optimalCosts=((globalCosts<optimalCosts)||i==0)?globalCosts:optimalCosts;
+            optimalCosts=((globalCosts<optimalCosts)||i==0&& j==1)?globalCosts:optimalCosts;
         }
     }
 
