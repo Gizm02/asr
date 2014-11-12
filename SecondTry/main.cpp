@@ -6,11 +6,11 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <array>
-#define SIZE 15
+#define SIZE 146
 #define K 3
-#define DEBUG 1
+#define DEBUG 0
 
-typedef double numeric;
+typedef double numeric;/**< To easily change the used data type. */
 using namespace std;
 
 numeric h(numeric x,numeric x_mean) {
@@ -23,7 +23,7 @@ numeric getMean(vector<numeric>& energies, unsigned int i, unsigned int j){
         mean+=energies[i+k];
     }
 
-    mean/=static_cast<numeric>(j-i+1);
+    mean/=j-i+1;
 
     return mean;
 }
