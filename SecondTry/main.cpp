@@ -6,9 +6,9 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <array>
-#define SIZE 10
+#define SIZE 146
 #define K 3
-#define DEBUG 1
+#define DEBUG 0
 using namespace std;
 int multCount = 0;
 
@@ -67,7 +67,7 @@ int main()
             means[i][j] = (energies[j] + (j-i)* means[i][j-1]) / (j-i+1);
 
             mean = getMean(energies,i,j);
-            cout << mean << " " << means[i][j] << endl;
+
             multCount++;
             localCost=0;
             for(int k=0;k<=(j-i);k++) {
@@ -75,7 +75,6 @@ int main()
             }
             costs[i][j]=localCost;
         }
-        cout << "--------" << endl;
     }
 
     numeric optimalCosts;
@@ -93,7 +92,6 @@ int main()
     for(int i=0;i<T;i++) {
         for(int j=i+1;j<T;j++) {
             globalCosts=costs[0][i]+costs[i+1][j]+costs[j+1][T-1];
-            cout << i << " " << j << " " << means[0][i] << " " <<means[i+1][j] << " "<< means[j+1][T-1] << endl;
             if(globalCosts<optimalCosts) {
                 cout<<"New minimal costs are:"<<globalCosts<<endl;
                 //optimalCosts = globalCosts;
@@ -110,7 +108,7 @@ int main()
     cout << "Optimal Costs: "<<optimalCosts << " Optimal Indeces i and j: "<< optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
     cout << "Optimal means: "  << endl << " x_{0,i} = " << optimalMeans.at(0) << endl << " x_{i+1,j} = " << optimalMeans.at(1) << endl<< " x_{j+1,T-1} =" << optimalMeans.at(2) << endl;
     cout << "Multiplication Count: " << multCount << endl;
-
+    #if DEBUG > 0
     for(int i = 0; i < SIZE; i++){
         for (int j = 0; j < SIZE; j++){
             if ( abs(means[i][j]) < 0.00001){cout << 0 << " ";}
@@ -118,5 +116,6 @@ int main()
         }
         cout << endl;
     }
+    #endif
     return 0;
 }
