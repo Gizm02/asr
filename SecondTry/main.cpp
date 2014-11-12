@@ -89,7 +89,7 @@ int main()
                 optimalMeans.at(0) = means[0][i];
                 optimalMeans.at(1) = means[i+1][j];
                 optimalMeans.at(2) = means[j+1][T-1];
-                optimalIndexes.at(1) = i+1;
+                optimalIndexes.at(1) = i+1;/**< The indexing of the acoustic vectors start by 1 but i and j have array semantics (so we need to increment). */
                 optimalIndexes.at(2) = j+1;
             }
             optimalCosts=((globalCosts<optimalCosts)||(i==0&& j==1))?globalCosts:optimalCosts;
