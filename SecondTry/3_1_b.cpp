@@ -21,7 +21,7 @@ double getMean(vector<double>& energies, unsigned int i, unsigned int j){
     for(int k=0;k<=(j-i);k++) {
         mean+=energies[i+k];
     }
-    mean=mean/(j-i+1);
+    mean/=j-i;
     return mean;
 }
 
