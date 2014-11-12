@@ -6,9 +6,9 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <array>
-#define SIZE 10
+#define SIZE 146
 #define K 3
-#define DEBUG 1
+#define DEBUG 0
 using namespace std;
 int multCount = 0;
 
@@ -107,16 +107,18 @@ int main()
         }
     }
 
-    cout << "Optimal Costs: "<<optimalCosts << " Optimal Indeces i and j: "<< optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
-    cout << "Optimal means: "  << endl << " x_{0,i} = " << optimalMeans.at(0) << endl << " x_{i+1,j} = " << optimalMeans.at(1) << endl<< " x_{j+1,T-1} =" << optimalMeans.at(2) << endl;
-    cout << "Multiplication Count: " << multCount << endl;
 
-    for(int i = 0; i < SIZE; i++){
+
+    /*for(int i = 0; i < SIZE; i++){
         for (int j = 0; j < SIZE; j++){
             if ( abs(means[i][j]) < 0.00001){cout << 0 << " ";}
             else{cout << means[i][j] << " ";}
         }
         cout << endl;
-    }
+    }*/
+
+    cout << "Optimal Costs: "<<optimalCosts << " Optimal Indeces i and j: "<< optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
+    cout << "Optimal means: "  << endl << " x_{0,i} = " << optimalMeans.at(0) << endl << " x_{i+1,j} = " << optimalMeans.at(1) << endl<< " x_{j+1,T-1} =" << optimalMeans.at(2) << endl;
+    cout << "Multiplication Count: " << multCount << endl;
     return 0;
 }
