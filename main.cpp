@@ -9,7 +9,6 @@
 #include "SimpleOptimizer.h"
 #include "Solution.h"
 #define DEBUG 0
-#define FROMFILE 1
 #define K 3
 
 using namespace std;
@@ -28,12 +27,17 @@ double getMean(vector<double>& energies, size_t i, size_t j){
 int main()
 {
     vector<double> energies;
-    #if FROMFILE==0
-    ifstream file("material/u3/probe1.ascii.txt");
+     string name;
+    #if DEBUG>0
+        name="material/u3/training.ascii.txt";
+    #else
+        name="material/u3/probe1.ascii.txt";
+    #endif
+    ifstream file(name);
 
     if(!file) { exit(EXIT_FAILURE);}
     string line;
-    vector<double> energies;
+
     while(getline(file,line)){
         energies.push_back(strtod(line.c_str(),NULL));
     }
@@ -42,19 +46,8 @@ int main()
     vector<double>& test = context.getEnergies();
     cout << test.first() << endl;
     */
-    #endif
-    #if FROMFILE>0
-    energies.push_back(0);
-    energies.push_back(0);
-    energies.push_back(0);
-    energies.push_back(0);
-    energies.push_back(5);
-    energies.push_back(5);
-    energies.push_back(5);
-    energies.push_back(0);
-    energies.push_back(0);
-    energies.push_back(0);
-    #endif
+
+
     ///Test if the vectors are copied correctly
     double mean=0;
     size_t T = energies.size();
@@ -70,9 +63,9 @@ int main()
             double localCost=0;
             for(int k=0;k<(j-i);k++) {
                 localCost+=h(energies.at(i+k),mean);
-                cout<<localCost<<" ";
+                //cout<<localCost<<" ";
             }
-            cout<<endl;
+        //    cout<<endl;
             costs.at(i*K+j)=localCost;
         }
     }
@@ -95,7 +88,7 @@ int main()
                 optimalIndexes.at(1) = i;
                 optimalIndexes.at(2) = j;
             }
-            optimalCosts=((globalCosts<optimalCosts)||i==0)?globalCosts:optimalCosts;
+            optimalCosts=((globalCosts<optimalCosts)||(i==0 && j==1))?globalCosts:optimalCosts;
         }
     }
 
