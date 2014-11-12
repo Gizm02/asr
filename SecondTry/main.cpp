@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <array>
+#define SIZE 146
 #define K 3
 #define DEBUG 0
 
@@ -44,11 +45,11 @@ int main()
 
 ///Test if the vectors are copied correctly
     double mean=0;
-    const size_t T = 146;//energies.size();//energies.size();
+    const size_t T = SIZE;//energies.size();//energies.size();
     #if DEBUG>0
     cout<<"T is: "<<T<<endl;
     #endif // DEBUG
-    array<array <double,146>,146> costs;
+    array<array <double,SIZE>,SIZE> costs;
     for(int i=0;i<T;i++) {
         for(int j=i+1;j<T;j++) {
             double localCost, mean;
@@ -63,7 +64,7 @@ int main()
     double optimalCosts;
     double globalCosts=0;
 
-    vector<double> optimalIndexes(12);
+    vector<double> optimalIndexes(SIZE);
     optimalIndexes.at(0)=0;
     optimalIndexes.at(K)=T;
 
