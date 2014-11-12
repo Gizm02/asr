@@ -10,26 +10,27 @@
 #define K 3
 #define DEBUG 1
 
+typedef double numeric;
 using namespace std;
 
-double h(double x,double x_mean) {
+numeric h(numeric x,numeric x_mean) {
     return (pow((x-x_mean),2));
 }
 
-double getMean(vector<double>& energies, unsigned int i, unsigned int j){
-    double mean=0;
+numeric getMean(vector<numeric>& energies, unsigned int i, unsigned int j){
+    numeric mean=0;
     for(int k=0;k<=(j-i);++k) {
         mean+=energies[i+k];
     }
 
-    mean/=static_cast<double>(j-i+1);
+    mean/=static_cast<numeric>(j-i+1);
 
     return mean;
 }
 
 int main()
 {
-    vector<double> energies;
+    vector<numeric> energies;
      string name;
     #if DEBUG>0
         name="material/u3/training.ascii.txt";
@@ -45,20 +46,19 @@ int main()
         energies.push_back(strtod(line.c_str(),NULL));
     }
 
-///Test if the vectors are copied correctly
-    double mean=0;
+    //numeric mean=0;
     const size_t T = SIZE;
     #if DEBUG>0
     cout<<"T is: "<<T<<endl;
     #endif // DEBUG
 
-    array<array <double,SIZE>,SIZE> costs;
-    array<array <double,SIZE>,SIZE> means;
+    array<array <numeric,SIZE>,SIZE> costs;
+    array<array <numeric,SIZE>,SIZE> means;
 
     for(int i=0;i<T;i++) {
         means[i][i] = energies[i];
         for(int j=i+1;j<T;j++) {
-            double localCost, mean;
+            numeric localCost, mean;
             means[i][j] = (energies[j] + (j-i) * means[i][j-1]) / (j-i+1);
             localCost=0;
             for(int k=0;k<=(j-i);k++) {
@@ -67,13 +67,13 @@ int main()
             costs[i][j]=localCost;
         }
     }
-    double optimalCosts;
-    double globalCosts=0;
+    numeric optimalCosts;
+    numeric globalCosts=0;
 
 
-    vector<double> optimalIndexes(4);
+    vector<numeric> optimalIndexes(4);
 
-    vector<double> optimalMeans(K+1);
+    vector<numeric> optimalMeans(K+1);
     optimalMeans.at(0)=0;
     optimalMeans.at(K)=0;
 
