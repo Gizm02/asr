@@ -13,23 +13,23 @@ using namespace std;
 int multCount = 0;
 double h(double x,double x_mean) {
     multCount++;
-    return (pow((x-x_mean),2));
 }
+typedef double numeric;/**< To easily change the used data type. */
 
-double getMean(vector<double>& energies, unsigned int i, unsigned int j){
-    double mean=0;
+numeric getMean(vector<numeric>& energies, unsigned int i, unsigned int j){
+    numeric mean=0;
     for(int k=0;k<=(j-i);++k) {
         mean+=energies[i+k];
     }
 
-    mean/=static_cast<double>(j-i+1);
+    mean/=j-i+1;
 
     return mean;
 }
 
 int main()
 {
-    vector<double> energies;
+    vector<numeric> energies;
      string name;
     #if DEBUG>0
         name="material/u3/training.ascii.txt";
@@ -45,15 +45,17 @@ int main()
         energies.push_back(strtod(line.c_str(),NULL));
     }
 
-///Test if the vectors are means[i][j] < 0.000000000000000001 && means[i][j] >0copied correctly
+
+    //numeric mean=0;
+
     const size_t T = SIZE;
     #if DEBUG>0
     cout<<"T is: "<<T<<endl;
     #endif // DEBUG
 
+
     array<array <double,SIZE>,SIZE> costs;
     array<array <double,SIZE>,SIZE> means;
-    //vector< vector<double> > means(SIZE,vector<double>(0,SIZE));
     for(int i=0;i<T;i++) {
         means[i][i] = energies[i];
         for(int j=i+1;j<T;j++) {
@@ -75,6 +77,7 @@ int main()
 
     vector<double> optimalIndexes(SIZE);
     vector<double> optimalMeans(K+1);
+
     optimalMeans.at(0)=0;
     optimalMeans.at(K)=0;
 
@@ -91,8 +94,8 @@ int main()
                 optimalMeans.at(0) = means[0][i];
                 optimalMeans.at(1) = means[i+1][j];
                 optimalMeans.at(2) = means[j+1][T-1];
-                optimalIndexes.at(1) = i;
-                optimalIndexes.at(2) = j;
+                optimalIndexes.at(1) = i+1;/**< The indexing of the acoustic vectors start by 1 but i and j have array semantics (so we need to increment). */
+                optimalIndexes.at(2) = j+1;
             }
             optimalCosts=((globalCosts<optimalCosts)||(i==0&& j==1))?globalCosts:optimalCosts;
         }
