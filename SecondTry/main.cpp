@@ -75,6 +75,7 @@ int main()
             }
             costs[i][j]=localCost;
         }
+
     }
 
     numeric optimalCosts;
@@ -92,8 +93,9 @@ int main()
     for(int i=0;i<T;i++) {
         for(int j=i+1;j<T;j++) {
             globalCosts=costs[0][i]+costs[i+1][j]+costs[j+1][T-1];
+
             if(globalCosts<optimalCosts) {
-                cout<<"New minimal costs are:"<<globalCosts<<endl;
+                //cout<<"New minimal costs are:"<<globalCosts<<endl;
                 //optimalCosts = globalCosts;
                 optimalMeans.at(0) = means[0][i];
                 optimalMeans.at(1) = means[i+1][j];
@@ -105,7 +107,7 @@ int main()
         }
     }
 
-<<<<<<< HEAD
+
     cout << "Optimal Costs: "<<optimalCosts << " Optimal Indeces i and j: "<< optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
     cout << "Optimal means: "  << endl << " x_{0,i} = " << optimalMeans.at(0) << endl << " x_{i+1,j} = " << optimalMeans.at(1) << endl<< " x_{j+1,T-1} =" << optimalMeans.at(2) << endl;
     cout << "Multiplication Count: " << multCount << endl;
