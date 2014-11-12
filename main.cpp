@@ -8,7 +8,7 @@
 #include "Context.h"
 #include "SimpleOptimizer.h"
 #include "Solution.h"
-#define DEBUG 0
+#define DEBUG 1
 #define K 3
 
 using namespace std;
@@ -57,9 +57,9 @@ int main()
         for(int j=i+1;j<(T-1);j++) {
             ///Determine the mean for the intervall [t_i,t_j]
             mean=getMean(energies,i,j);
-            #if DEBUG>0
+            /*#if DEBUG>0
             assert(mean!=0);
-            #endif
+            #endif*/
             double localCost=0;
             for(int k=0;k<(j-i);k++) {
                 localCost+=h(energies.at(i+k),mean);
@@ -92,6 +92,6 @@ int main()
         }
     }
 
-    cout << optimalCosts << " " << optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
+    cout << "Optimal Indeces: "<<optimalCosts << " " << optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
     return 0;
 }
