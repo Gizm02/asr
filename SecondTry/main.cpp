@@ -11,11 +11,14 @@
 #define DEBUG 1
 using namespace std;
 int multCount = 0;
-double h(double x,double x_mean) {
-    multCount++;
-    return (pow(x-x_mean,2));
-}
+
 typedef double numeric;/**< To easily change the used data type. */
+
+numeric h(numeric x,numeric x_mean) {
+    multCount++;
+    return pow(x-x_mean,2);
+
+}
 
 numeric getMean(vector<numeric>& energies, unsigned int i, unsigned int j){
     numeric mean=0;
@@ -55,12 +58,12 @@ int main()
     #endif // DEBUG
 
 
-    array<array <double,SIZE>,SIZE> costs;
-    array<array <double,SIZE>,SIZE> means;
+    array<array <numeric,SIZE>,SIZE> costs;
+    array<array <numeric,SIZE>,SIZE> means;
     for(int i=0;i<T;i++) {
         means[i][i] = energies[i];
         for(int j=i+1;j<T;j++) {
-            double localCost, mean;
+            numeric localCost, mean;
             means[i][j] = (energies[j] + (j-i)* means[i][j-1]) / (j-i+1);
 
             mean = getMean(energies,i,j);
@@ -75,11 +78,11 @@ int main()
         cout << "--------" << endl;
     }
 
-    double optimalCosts;
-    double globalCosts=0;
+    numeric optimalCosts;
+    numeric globalCosts=0;
 
-    vector<double> optimalIndexes(SIZE);
-    vector<double> optimalMeans(K+1);
+    vector<numeric> optimalIndexes(SIZE);
+    vector<numeric> optimalMeans(K+1);
 
     optimalMeans.at(0)=0;
     optimalMeans.at(K)=0;
