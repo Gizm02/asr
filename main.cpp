@@ -8,7 +8,7 @@
 #include "Context.h"
 #include "SimpleOptimizer.h"
 #include "Solution.h"
-#define DEBUG 0
+#define DEBUG 1
 #define K 3
 
 using namespace std;
@@ -20,7 +20,7 @@ double getMean(vector<double>& energies, size_t i, size_t j){
     for(int k=0;k<=(j-i);k++) {
         mean+=energies.at(i+k);
     }
-    mean*=1.0/(j-i);
+    mean/=static_cast<double>(j-i);
     return mean;
 }
 int main()
@@ -50,6 +50,9 @@ int main()
     ///Test if the vectors are copied correctly
     double mean=0;
     size_t T = energies.size();
+    #if DEBUG>0
+    cout<<"T is: "<<T<<endl;
+    #endif // DEBUG
     ///Set up the cost matrix
     vector<double> costs(T*T);
     for(int i=0;i<(T-2);i++) {
@@ -60,12 +63,12 @@ int main()
             assert(mean!=0);
             #endif*/
             double localCost=0;
-            for(int k=0;k<(j-i);k++) {
+            for(int k=0;k<=(j-i);k++) {
                 localCost+=h(energies.at(i+k),mean);
                 //cout<<localCost<<" ";
             }
         //    cout<<endl;
-            costs.at(i*K+j)=localCost;
+            costs.at(i*T+j)=localCost;
         }
     }
     #if DEBUG>0
@@ -74,15 +77,15 @@ int main()
     }
     #endif // DEBUG
     double globalCosts;/**< Stores the global cost for a segmentation. */
-    double optimalCosts=10e10;/**< Stores the optimal cost found during iteration. */
+    double optimalCosts;/**< Stores the optimal cost found during iteration. */
     vector<double> optimalIndexes(K+1,0);
     optimalIndexes.at(0)=0;
     optimalIndexes.at(K)=T;
     for(int i=0;i<(T-2);i++) {
         for(int j=i+1;j<(T-1);j++) {
-            globalCosts=costs.at(i)+costs.at(i*K+j)+costs.at(j*K+K);
+            globalCosts=costs.at(i)+costs.at((i+1)*T+j)+costs.at((j+1)*T+T);
             if ( globalCosts < optimalCosts){
-                    cout<<"New minimal costs are:"<<globalCosts<<endl;
+                cout<<"New minimal costs are:"<<globalCosts<<endl;
                 //optimalCosts = globalCosts;
                 optimalIndexes.at(1) = i;
                 optimalIndexes.at(2) = j;
