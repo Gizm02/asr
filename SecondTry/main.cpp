@@ -6,13 +6,14 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <array>
-#define SIZE 7
+#define SIZE 10
 #define K 3
 #define DEBUG 1
 using namespace std;
 int multCount = 0;
 double h(double x,double x_mean) {
     multCount++;
+    return (pow(x-x_mean,2));
 }
 typedef double numeric;/**< To easily change the used data type. */
 
@@ -61,6 +62,7 @@ int main()
         for(int j=i+1;j<T;j++) {
             double localCost, mean;
             means[i][j] = (energies[j] + (j-i)* means[i][j-1]) / (j-i+1);
+
             mean = getMean(energies,i,j);
             cout << mean << " " << means[i][j] << endl;
             multCount++;
@@ -70,6 +72,7 @@ int main()
             }
             costs[i][j]=localCost;
         }
+        cout << "--------" << endl;
     }
 
     double optimalCosts;
@@ -102,7 +105,7 @@ int main()
     }
 
     cout << "Optimal Costs: "<<optimalCosts << " Optimal Indeces i and j: "<< optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
-    cout << "Optimal means: "  << endl << " x_{0,i} = " << optimalMeans.at(1) << endl << " x_{i+1,j} = " << optimalMeans.at(2) << endl<< " x_{j+1,T-1} =" << optimalMeans.at(3) << endl;
+    cout << "Optimal means: "  << endl << " x_{0,i} = " << optimalMeans.at(0) << endl << " x_{i+1,j} = " << optimalMeans.at(1) << endl<< " x_{j+1,T-1} =" << optimalMeans.at(2) << endl;
     cout << "Multiplication Count: " << multCount << endl;
 
     for(int i = 0; i < SIZE; i++){
