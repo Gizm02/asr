@@ -59,7 +59,7 @@ int main()
         means[i][i] = energies[i];
         for(int j=i+1;j<T;j++) {
             numeric localCost, mean;
-            means[i][j] = (energies[j] + (j-i) * means[i][j-1]) / (j-i+1);
+            means[i][j] = (energies[j] + (j-i-1) * means[i][j-1]) / (j-i+1);
             localCost=0;
             for(int k=0;k<=(j-i);k++) {
                 localCost+=h(energies[i+k],means[i][j]);
