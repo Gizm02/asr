@@ -18,7 +18,7 @@ double h(double x,double x_mean) {
 
 double getMean(vector<double>& energies, unsigned int i, unsigned int j){
     double mean=0;
-    for(int k=0;k<=(j-i);k++) {
+    for(int k=0;k<=(j-i);++k) {
         mean+=energies[i+k];
     }
     mean=mean/(j-i+1);
