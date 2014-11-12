@@ -20,7 +20,7 @@ double getMean(vector<double>& energies, unsigned int i, unsigned int j){
     for(int k=0;k<=(j-i);k++) {
         mean+=energies[i+k];
     }
-    mean/=static_cast<double>(j-i);
+    mean/=static_cast<double>(j-i+1);
     return mean;
 }
 
@@ -49,13 +49,15 @@ int main()
     cout<<"T is: "<<T<<endl;
     #endif // DEBUG
     array<array <double,146>,146> costs;
+    array<array <double,146>,146> means;
     for(int i=0;i<T;i++) {
+        means[i][i] = energies[i];
         for(int j=i+1;j<T;j++) {
             double localCost, mean;
-            mean=getMean(energies,i,j);
+            means[i][j] = (energies[j] + (j-i) * means[i][j-1]) / (j-i+1);
             localCost=0;
             for(int k=0;k<=(j-i);k++) {
-                localCost+=h(energies[i+k],mean);
+                localCost+=h(energies[i+k],means[i][j]);
             }
             costs[i][j]=localCost;
         }
@@ -64,10 +66,11 @@ int main()
     double globalCosts=0;
 
     vector<double> optimalIndexes(12);
+    vector<double> optimalMeans(K+1);
+    optimalMeans.at(0)=0;
+    optimalMeans.at(K)=0;
     optimalIndexes.at(0)=0;
     optimalIndexes.at(K)=T;
-
-
 
     for(int i=0;i<T;i++) {
         for(int j=i+1;j<T;j++) {
@@ -75,6 +78,9 @@ int main()
             if(globalCosts<optimalCosts) {
                 cout<<"New minimal costs are:"<<globalCosts<<endl;
                 //optimalCosts = globalCosts;
+                optimalMeans.at(0) = means[0][i];
+                optimalMeans.at(1) = means[i+1][j];
+                optimalMeans.at(2) = means[j+1][T-1];
                 optimalIndexes.at(1) = i;
                 optimalIndexes.at(2) = j;
             }
@@ -83,6 +89,6 @@ int main()
     }
 
     cout << "Optimal Costs: "<<optimalCosts << " Optimal Indeces i and j: "<< optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
-
+    cout << "Optimal means: "  << endl << " x_{0,i} = " << optimalMeans.at(1) << endl << " x_{i+1,j} = " << optimalMeans.at(2) << endl<< " x_{j+1,T-1} =" << optimalMeans.at(3) << endl;
     return 0;
 }
