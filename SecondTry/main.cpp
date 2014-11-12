@@ -6,9 +6,9 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <array>
-#define SIZE 146
+#define SIZE 146/**<  Switch to 15(=current size of training dataset) if DEBUG is set to 1. */
 #define K 3
-#define DEBUG 0
+#define DEBUG 0/**< Switch to 1 for debug info and usage of training data as input. */
 
 typedef double numeric;/**< To easily change the used data type. */
 using namespace std;
