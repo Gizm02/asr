@@ -6,9 +6,9 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <array>
-#define SIZE 146
+#define SIZE 15
 #define K 3
-#define DEBUG 0
+#define DEBUG 1
 
 using namespace std;
 
@@ -79,7 +79,7 @@ int main()
                 optimalIndexes.at(1) = i;
                 optimalIndexes.at(2) = j;
             }
-            optimalCosts=((globalCosts<optimalCosts)||i==0&& j==1)?globalCosts:optimalCosts;
+            optimalCosts=((globalCosts<optimalCosts)||(i==0&& j==1))?globalCosts:optimalCosts;
         }
     }
 
