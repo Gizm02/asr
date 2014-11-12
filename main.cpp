@@ -13,8 +13,7 @@
 
 using namespace std;
 double h(double x,double x_mean) {
-    double val=((pow((x-x_mean),2)));
-    return val;
+    return (pow((x-x_mean),2));
 }
 double getMean(vector<double>& energies, size_t i, size_t j){
     double mean=0;
@@ -92,6 +91,6 @@ int main()
         }
     }
 
-    cout << "Optimal Costs: "<<optimalCosts << " Optimal Indeces: "<< optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
+    cout << "Optimal Costs: "<<optimalCosts << " Optimal Indeces i and j: "<< optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
     return 0;
 }
