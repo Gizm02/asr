@@ -6,8 +6,9 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <array>
+#define SIZE 146
 #define K 3
-#define DEBUG 0
+#define DEBUG 1
 
 using namespace std;
 
@@ -17,10 +18,12 @@ double h(double x,double x_mean) {
 
 double getMean(vector<double>& energies, unsigned int i, unsigned int j){
     double mean=0;
-    for(int k=0;k<=(j-i);k++) {
+    for(int k=0;k<=(j-i);++k) {
         mean+=energies[i+k];
     }
+
     mean/=static_cast<double>(j-i+1);
+
     return mean;
 }
 
@@ -29,7 +32,7 @@ int main()
     vector<double> energies;
      string name;
     #if DEBUG>0
-        name="material/u3/training.ascii.txt";
+        name="material/u3/probe1.ascii.txt";
     #else
         name="material/u3/probe1.ascii.txt";
     #endif
@@ -44,12 +47,14 @@ int main()
 
 ///Test if the vectors are copied correctly
     double mean=0;
-    const size_t T = 146;//energies.size();//energies.size();
+    const size_t T = SIZE;
     #if DEBUG>0
     cout<<"T is: "<<T<<endl;
     #endif // DEBUG
-    array<array <double,146>,146> costs;
-    array<array <double,146>,146> means;
+
+    array<array <double,SIZE>,SIZE> costs;
+    array<array <double,SIZE>,SIZE> means;
+
     for(int i=0;i<T;i++) {
         means[i][i] = energies[i];
         for(int j=i+1;j<T;j++) {
@@ -65,10 +70,12 @@ int main()
     double optimalCosts;
     double globalCosts=0;
 
-    vector<double> optimalIndexes(12);
+
+    vector<double> optimalIndexes(SIZE);
     vector<double> optimalMeans(K+1);
     optimalMeans.at(0)=0;
     optimalMeans.at(K)=0;
+
     optimalIndexes.at(0)=0;
     optimalIndexes.at(K)=T;
 
@@ -84,7 +91,7 @@ int main()
                 optimalIndexes.at(1) = i;
                 optimalIndexes.at(2) = j;
             }
-            optimalCosts=((globalCosts<optimalCosts)||i==0&& j==1)?globalCosts:optimalCosts;
+            optimalCosts=((globalCosts<optimalCosts)||(i==0&& j==1))?globalCosts:optimalCosts;
         }
     }
 
