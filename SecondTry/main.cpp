@@ -6,13 +6,13 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <array>
-#define SIZE 146
+#define SIZE 7
 #define K 3
 #define DEBUG 1
-
 using namespace std;
-
+int multCount = 0;
 double h(double x,double x_mean) {
+    multCount++;
     return (pow((x-x_mean),2));
 }
 
@@ -32,7 +32,7 @@ int main()
     vector<double> energies;
      string name;
     #if DEBUG>0
-        name="material/u3/probe1.ascii.txt";
+        name="material/u3/training.ascii.txt";
     #else
         name="material/u3/probe1.ascii.txt";
     #endif
@@ -45,8 +45,7 @@ int main()
         energies.push_back(strtod(line.c_str(),NULL));
     }
 
-///Test if the vectors are copied correctly
-    double mean=0;
+///Test if the vectors are means[i][j] < 0.000000000000000001 && means[i][j] >0copied correctly
     const size_t T = SIZE;
     #if DEBUG>0
     cout<<"T is: "<<T<<endl;
@@ -54,12 +53,15 @@ int main()
 
     array<array <double,SIZE>,SIZE> costs;
     array<array <double,SIZE>,SIZE> means;
-
+    //vector< vector<double> > means(SIZE,vector<double>(0,SIZE));
     for(int i=0;i<T;i++) {
         means[i][i] = energies[i];
         for(int j=i+1;j<T;j++) {
             double localCost, mean;
-            means[i][j] = (energies[j] + (j-i) * means[i][j-1]) / (j-i+1);
+            means[i][j] = (energies[j] + (j-i)* means[i][j-1]) / (j-i+1);
+            mean = getMean(energies,i,j);
+            cout << mean << " " << means[i][j] << endl;
+            multCount++;
             localCost=0;
             for(int k=0;k<=(j-i);k++) {
                 localCost+=h(energies[i+k],means[i][j]);
@@ -67,9 +69,9 @@ int main()
             costs[i][j]=localCost;
         }
     }
+
     double optimalCosts;
     double globalCosts=0;
-
 
     vector<double> optimalIndexes(SIZE);
     vector<double> optimalMeans(K+1);
@@ -82,6 +84,7 @@ int main()
     for(int i=0;i<T;i++) {
         for(int j=i+1;j<T;j++) {
             globalCosts=costs[0][i]+costs[i+1][j]+costs[j+1][T-1];
+            cout << i << " " << j << " " << means[0][i] << " " <<means[i+1][j] << " "<< means[j+1][T-1] << endl;
             if(globalCosts<optimalCosts) {
                 cout<<"New minimal costs are:"<<globalCosts<<endl;
                 //optimalCosts = globalCosts;
@@ -97,5 +100,14 @@ int main()
 
     cout << "Optimal Costs: "<<optimalCosts << " Optimal Indeces i and j: "<< optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
     cout << "Optimal means: "  << endl << " x_{0,i} = " << optimalMeans.at(1) << endl << " x_{i+1,j} = " << optimalMeans.at(2) << endl<< " x_{j+1,T-1} =" << optimalMeans.at(3) << endl;
+    cout << "Multiplication Count: " << multCount << endl;
+
+    for(int i = 0; i < SIZE; i++){
+        for (int j = 0; j < SIZE; j++){
+            if ( abs(means[i][j]) < 0.00001){cout << 0 << " ";}
+            else{cout << means[i][j] << " ";}
+        }
+        cout << endl;
+    }
     return 0;
 }
