@@ -8,7 +8,7 @@
 #include "Context.h"
 #include "SimpleOptimizer.h"
 #include "Solution.h"
-#define DEBUG 1
+#define DEBUG 0
 #define K 3
 
 using namespace std;
@@ -92,6 +92,6 @@ int main()
         }
     }
 
-    cout << "Optimal Indeces: "<<optimalCosts << " " << optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
+    cout << "Optimal Costs: "<<optimalCosts << " Optimal Indeces: "<< optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
     return 0;
 }
