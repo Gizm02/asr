@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1415757851 source:d:\documents\cpp_projects\secondtry\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<math.h>
+	<stdlib.h>
+	<assert.h>
+	<array>
+
