@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <array>
-#define SIZE 15
+#define SIZE 15//146
 #define K 3
 #define DEBUG 1
 
@@ -64,7 +64,7 @@ int main()
     double optimalCosts;
     double globalCosts=0;
 
-    vector<double> optimalIndexes(SIZE);
+    vector<double> optimalIndexes(4);
     optimalIndexes.at(0)=0;
     optimalIndexes.at(K)=T;
 
