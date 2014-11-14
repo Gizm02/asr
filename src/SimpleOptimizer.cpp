@@ -8,9 +8,9 @@
 using namespace std;
 
 template <class Optimizer>
-void SimpleOptimizer::optimize(Context<Optimizer>& context,Solution& solution) {
-    vector<double> energies=context.getEnergies();
-    std::size_t T=static_cast<size_t>(context.getEnergies().size());
+void SimpleOptimizer::optimize(const Context<Optimizer>& context,Solution& solution) {
+    vector<numeric> energies=context.getEnergies();
+    size_t T=static_cast<size_t>(context.getEnergies().size());
     #if DEBUG>0
     ///Test if the vectors are copied correctly
     for(int i=0;i<T;i++) {
@@ -20,7 +20,7 @@ void SimpleOptimizer::optimize(Context<Optimizer>& context,Solution& solution) {
         }
     }
     #endif // DEBUG
-    double mean=0;
+    numeric mean=0;
     ///Set up the cost matrix
     for(int i=0;i<(T-2);i++) {
         for(int j=i+1;j<(T-1);j++) {
@@ -29,15 +29,15 @@ void SimpleOptimizer::optimize(Context<Optimizer>& context,Solution& solution) {
             #if DEBUG>0
             assert(mean>0);
             #endif
-            double localCost=0;
+            numeric localCost=0;
             for(int k=0;k<(j-i);k++) {
                 localCost+=context.h(energies.at(i+k),mean);
             }
             costs.push_back(i*K+j)=localCost;
         }
     }
-    double globalCosts;/**< Stores the global cost for a segmentation. */
-    double optimalCosts;/**< Stores the optimal cost found during iteration. */
+    numeric globalCosts;/**< Stores the global cost for a segmentation. */
+    numeric optimalCosts;/**< Stores the optimal cost found during iteration. */
     for(int i=0;i<(T-2);i++) {
         for(int j=i+1;j<(T-1);j++) {
             globalCosts=costs.at(i)+costs.at(i*K+j)+costs.at(j*K+K);
@@ -47,12 +47,12 @@ void SimpleOptimizer::optimize(Context<Optimizer>& context,Solution& solution) {
     solution.setSolution(optimalCosts);/**< Store the result in the solution obj. */
 }
 
-vector<double> SimpleOptimizer::getCosts() {
+vector<numeric> SimpleOptimizer::getCosts() {
     return costs;
 }
 
-double SimpleOptimizer::getMean(const std::vector<double>& energies, int i, int j) {
-    double mean=0;
+numeric SimpleOptimizer::getMean(const vector<numeric>& energies, int i, int j) {
+    numeric mean=0;
     for(int k=0;k<=(j-i);k++) {
         mean+=energies.at(i+k);
     }
@@ -60,7 +60,8 @@ double SimpleOptimizer::getMean(const std::vector<double>& energies, int i, int 
     return mean;
 }
 
-SimpleOptimizer::SimpleOptimizer() {}
+
+
 SimpleOptimizer::~SimpleOptimizer()
 {
     //dtor

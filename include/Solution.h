@@ -6,6 +6,8 @@
 #define SOLUTION_H
 
 
+typedef double numeric;
+
 class Solution
 {
     public:
@@ -14,8 +16,8 @@ class Solution
          * \param   solution    The result the Solution-object supposed to store.
          *
          */
-        Solution(double solution);
-        Solution():Solution(0){ };/**< Ctor delegation */
+        Solution(numeric sol):solution(sol),multCount(0) {};
+        Solution():Solution(static_cast<numeric>(0)) { };/**< Ctor delegation */
 
 
         virtual ~Solution();
@@ -25,11 +27,11 @@ class Solution
          * \return Computed solution.
          *
          */
-        double getSolution();
-        void setSolution(double solution);
+        numeric getSolution();
+        void setSolution(numeric solution);
     protected:
     private:
-        double solution;/**< Stores the result computed by the chosen optimizer/algorithm object. */
+        numeric solution;/**< Stores the result computed by the chosen optimizer/algorithm object. */
         unsigned int multCount;/**< The number of multiplications needed for computing the optimum */
 };
 

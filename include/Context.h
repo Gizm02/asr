@@ -7,8 +7,12 @@
 #include <vector>
 #include <cmath>
 #include "Solution.h"
+#include "SimpleOptimizer.h"
 #define K 3 /**< Total number of segments that have to be determined by the start-stop-detection. */
 #define T (K+1) /**< Total number of acoustic feature vectors that are taken into account. */
+
+typedef double numeric;
+
 template <class Optimizer>/**< This template variable stores the used algorithm. */
 class Context
 {
@@ -18,7 +22,7 @@ class Context
         //Be careful, is an empty vector, elements must be added via push_back(T)
 
         //double computeOptimum { simop.}
-        Context(Optimizer& opt,Solution& sol,std::vector<double>& en):optimizer(opt),solution(sol),energies(en) {};
+        Context(Optimizer& opt,Solution& sol,std::vector<numeric>& en):energies(en),optimizer(opt),solution(sol) {};
         Context();
         virtual ~Context();
 
@@ -27,9 +31,8 @@ class Context
         * \return  The optimal distribution of the input vectors among K intervals.
         *
         */
-        double optimize();
-        void setEnergies(std::vector<double> energies);
-        std::vector<double>& getEnergies();/**< Getter function for the energies stored by the context-obj. */
+        void setEnergies(std::vector<numeric> energies);
+        std::vector<numeric>& getEnergies();/**< Getter function for the energies stored by the context-obj. */
 
         /*! \brief  This function determines the local costs for inserting the vector x into a certain interval.
         *
@@ -38,10 +41,11 @@ class Context
         * \return  h(x,x_mean)=(x-x_{mean})^2
         *
         */
-        double h(double x,double x_mean);
+        numeric h(numeric x,numeric x_mean);
+        void optimize();
     protected:
     private:
-        std::vector<double>& energies;/**< This variable stores all the energies x_1,...,x_T */
+        std::vector<numeric>& energies;/**< This variable stores all the energies x_1,...,x_T */
         Optimizer& optimizer;/**< This represents the chosen algorithm. Must be determined/chosen at compile time. */
         Solution& solution;/**< Pointer to an object that stores produced result context. */
 };
@@ -56,21 +60,21 @@ Context<Optimizer>::~Context()
 }
 
 template <class Optimizer>
-double Context<Optimizer>::h(double x,double x_mean) {
+numeric Context<Optimizer>::h(numeric x,numeric x_mean) {
     return ((pow((x-x_mean),2)));
 }
 
 template <class Optimizer>
-double Context<Optimizer>::optimize() {
-    return 0;
+void Context<Optimizer>::optimize() {
+    optimizer.optimize(*this,solution);/**< *this to cast this (Context<Optimizer>* const) into a reference. */
 }
 
 template <class Optimizer>
-void Context<Optimizer>::setEnergies(std::vector<double> energies){
+void Context<Optimizer>::setEnergies(std::vector<numeric> energies){
     this->energies = energies;
 }
 template <class Optimizer>
-std::vector<double>& Context<Optimizer>::getEnergies() {
+std::vector<numeric>& Context<Optimizer>::getEnergies() {
     return energies;
 }
 #endif // CONTEXT_H

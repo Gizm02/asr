@@ -4,10 +4,13 @@
 #include <array>
 #include "Context.h"
 
+/*template <class Optimizer>
+class Context<Optimizer>;
+*/
 class SimpleOptimizer
 {
     public:
-        SimpleOptimizer();
+        SimpleOptimizer():costs(T*T) { };
         virtual ~SimpleOptimizer();
 
         /** \brief This method optimizes the problem given by the context-obj.
@@ -16,8 +19,8 @@ class SimpleOptimizer
          * \param solution Stores solution context, e.g. number of needed multiplications, the solution itself etc.
          *
          */
-         template <class Optimizer>
-        void optimize(Context<Optimizer>& context,Solution& solution);
+
+        void optimize(const Context<Optimizer>& context,Solution& solution);
 
 
         /** \brief  Computes the mean of acoustic feature vectors within a fixed interval.
@@ -28,12 +31,12 @@ class SimpleOptimizer
          * \return The mean of the vectors.
          *
          */
-        double getMean(const std::vector<double>& energies, int i, int j);
+        numeric getMean(const std::vector<numeric>& energies, int i, int j);
 
-        std::vector<double> getCosts();
+        std::vector<numeric> getCosts();
     protected:
     private:
-        std::vector<double> costs;/**< The cost matrix. */
+        std::vector<numeric> costs;/**< The cost matrix. */
 };
 
 
