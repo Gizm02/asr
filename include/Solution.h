@@ -1,6 +1,3 @@
-/*!
- * This class encapsulates solution context produced by the applied algorithms.
- */
 
 #ifndef SOLUTION_H
 #define SOLUTION_H
@@ -36,3 +33,4 @@ class Solution
 };
 
 #endif // SOLUTION_H
+

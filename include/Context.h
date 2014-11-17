@@ -1,6 +1,3 @@
-/*!
- * This class encapsulates the application/problem data and uses algorithms to compute the optimal solution for the problem given in the task.
- */
 
 #ifndef CONTEXT_H
 #define CONTEXT_H
@@ -78,3 +75,4 @@ std::vector<numeric>& Context<Optimizer>::getEnergies() {
     return energies;
 }
 #endif // CONTEXT_H
+

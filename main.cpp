@@ -1,15 +1,21 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
+#include <vector>
+#include <math.h>
 #include <stdlib.h>
-
+#include <assert.h>
+#include <array>
+#define SIZE 146
+#define K 3
+#define DEBUG 0
+using namespace std;
+int multCount = 0;
 #include "src/Context.h"
 #include "src/SimpleOptimizer.h"
 #include "src/Solution.h"
 
-using namespace std;
-
+typedef double numeric;/**< To easily change the used data type. */
 
 int main()
 {
@@ -19,6 +25,7 @@ int main()
     if(!file) { exit(EXIT_FAILURE);}
     string line;
     vector<numeric> energies;
+
     while(getline(file,line)){
         energies.push_back(strtod(line.c_str(),nullptr));/**< Always use nullptr instead of NULL! */
     }

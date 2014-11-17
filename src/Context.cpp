@@ -1,3 +1,4 @@
+
 /*#include "Context.h"
 
 
@@ -33,3 +34,4 @@ vector<double>& Context<Optimizer>::getEnergies() {
 }
 
 */
+

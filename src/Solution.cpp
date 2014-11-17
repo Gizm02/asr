@@ -1,4 +1,3 @@
-#include "Solution.h"
 
 //C++11 element initialize list
 
@@ -10,3 +9,4 @@ Solution::~Solution()
 {
     //dtor
 }
+

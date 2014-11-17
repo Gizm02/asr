@@ -1,8 +1,3 @@
-#ifndef SIMPLEOPTIMIZER_H
-#define SIMPLEOPTIMIZER_H
-#include <stdlib.h>
-#include <array>
-#include "Context.h"
 
 /*template <class Optimizer>
 class Context<Optimizer>;
@@ -41,3 +36,4 @@ class SimpleOptimizer
 
 
 #endif // SIMPLEOPTIMIZER_H
+
