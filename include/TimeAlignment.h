@@ -7,7 +7,7 @@ using namespace std;
 
 class TimeAlignment{
 	public:
-		TimeAlignment(string hypo_file, string ref_file, vector<double> weights);
+		TimeAlignment(string hypo_filename, string ref_filename, vector<double> w);
 		void computeDistanceRec();
 		void computeDistanceRecMemoi();
 		void computeDistanceDP();
