@@ -5,35 +5,35 @@
 #include <math.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "Context.h"
-#include "SimpleOptimizer.h"
-#include "Solution.h"
-#define DEBUG 1
-
+#include <array>
+#define SIZE 146
 #define K 3
-
+#define DEBUG 0
 using namespace std;
-double h(double x,double x_mean) {
+int multCount = 0;
 
-    double val=((pow((x-x_mean),2)));
+typedef double numeric;/**< To easily change the used data type. */
 
-    return val;
+numeric h(numeric x,numeric x_mean) {
+    multCount++;
+    return pow(x-x_mean,2);
+
 }
-double getMean(vector<double>& energies, size_t i, size_t j){
-    double mean=0;
-    for(int k=0;k<=(j-i);k++) {
-        mean+=energies.at(i+k);
+
+numeric getMean(vector<numeric>& energies, unsigned int i, unsigned int j){
+    numeric mean=0;
+    for(int k=0;k<=(j-i);++k) {
+        mean+=energies[i+k];
     }
-<<<<<<< HEAD
-    mean/=static_cast<double>(j-i);
-=======
-    mean*=1.0/(j-i+1);
->>>>>>> e95af8e68fcc9fff08173648a68f13088c14e622
+
+    mean/=j-i+1;
+
     return mean;
 }
+
 int main()
 {
-    vector<double> energies;
+    vector<numeric> energies;
      string name;
     #if DEBUG>0
         name="material/u3/training.ascii.txt";
@@ -48,83 +48,80 @@ int main()
     while(getline(file,line)){
         energies.push_back(strtod(line.c_str(),NULL));
     }
-    /*
-    context.setEnergies(energies);
-    vector<double>& test = context.getEnergies();
-    cout << test.first() << endl;
-    */
 
 
-    ///Test if the vectors are copied correctly
-    double mean=0;
-    size_t T = energies.size();
+    //numeric mean=0;
+
+    const size_t T = SIZE;
     #if DEBUG>0
     cout<<"T is: "<<T<<endl;
     #endif // DEBUG
-    ///Set up the cost matrix
-    vector<double> costs(T*T);
+
+
+    array<array <numeric,SIZE>,SIZE> costs;
+    array<array <numeric,SIZE>,SIZE> means;
     for(int i=0;i<T;i++) {
-        cout << "HALLO" << endl;
-        for(int j=i;j<T;j++) {
-            ///Determine the mean for the intervall [t_i,t_j]
+        means[i][i] = energies[i];
+        for(int j=i+1;j<T;j++) {
+            numeric localCost, mean;
+            means[i][j] = (energies[j] + (j-i)* means[i][j-1]) / (j-i+1);
 
-            mean=getMean(energies,i,j);
-            /*#if DEBUG>0
-            assert(mean!=0);
-            #endif*/
-            double localCost=0;
-            for(int k=0;k<=(j-i);k++) {
-                localCost+=h(energies.at(i+k),mean);
-                //cout<<localCost<<" ";
-            }
-        //    cout<<endl;
-            costs.at(i*T+j)=localCost;
             mean = getMean(energies,i,j);
-            costs.at(i*T+j) = h(energies.at(i),mean);
-            cout << mean << " " << costs.at(i*T+j) << endl;
+
+            multCount++;
+            localCost=0;
+            for(int k=0;k<=(j-i);k++) {
+                localCost+=h(energies[i+k],means[i][j]);
+            }
+            costs[i][j]=localCost;
+        }
+
+    }
+
+    numeric optimalCosts;
+    numeric globalCosts=0;
+
+    vector<numeric> optimalIndexes(SIZE);
+    vector<numeric> optimalMeans(K+1);
+
+    optimalMeans.at(0)=0;
+    optimalMeans.at(K)=0;
+
+    optimalIndexes.at(0)=0;
+    optimalIndexes.at(K)=T;
+
+    for(int i=0;i<T;i++) {
+        for(int j=i+1;j<T;j++) {
+            globalCosts=costs[0][i]+costs[i+1][j]+costs[j+1][T-1];
+
+            if(globalCosts<optimalCosts) {
+                //cout<<"New minimal costs are:"<<globalCosts<<endl;
+                //optimalCosts = globalCosts;
+                optimalMeans.at(0) = means[0][i];
+                optimalMeans.at(1) = means[i+1][j];
+                optimalMeans.at(2) = means[j+1][T-1];
+                optimalIndexes.at(1) = i+1;/**< The indexing of the acoustic vectors start by 1 but i and j have array semantics (so we need to increment). */
+                optimalIndexes.at(2) = j+1;
+            }
+            optimalCosts=((globalCosts<optimalCosts)||(i==0&& j==1))?globalCosts:optimalCosts;
+        }
+    }
 
 
+    cout << "Optimal Costs: "<<optimalCosts << " Optimal Indeces i and j: "<< optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
+    cout << "Optimal means: "  << endl << " x_{0,i} = " << optimalMeans.at(0) << endl << " x_{i+1,j} = " << optimalMeans.at(1) << endl<< " x_{j+1,T-1} =" << optimalMeans.at(2) << endl;
+    cout << "Multiplication Count: " << multCount << endl;
+    #if DEBUG > 0
+
+    for(int i = 0; i < SIZE; i++){
+
+        for (int j = 0; j < SIZE; j++){
+            if ( abs(means[i][j]) < 0.00001){cout << 0 << " ";}
+            else{cout << means[i][j] << " ";}
         }
         cout << endl;
     }
-    #if DEBUG>0
-    for(const auto &element: costs) {
-       // cout<<element<<" ";
-    }
-    #endif // DEBUG
-    double globalCosts;/**< Stores the global cost for a segmentation. */
-    double optimalCosts;/**< Stores the optimal cost found during iteration. */
-    vector<double> optimalIndexes(K+1,0);
-    optimalIndexes.at(0)=0;
-    optimalIndexes.at(K)=T;
-    for(int i=0;i<(T-2);i++) {
-        for(int j=i+1;j<(T-1);j++) {
-<<<<<<< HEAD
-            globalCosts=costs.at(i)+costs.at((i+1)*T+j)+costs.at((j+1)*T+T);
-=======
-            globalCosts=costs.at(i)+costs.at(i*T+j)+costs.at(j*T+T);
->>>>>>> e95af8e68fcc9fff08173648a68f13088c14e622
-            if ( globalCosts < optimalCosts){
-                cout<<"New minimal costs are:"<<globalCosts<<endl;
-                //optimalCosts = globalCosts;
-                optimalIndexes.at(1) = i;
-                optimalIndexes.at(2) = j;
-            }
+    #endif
 
-            optimalCosts=((globalCosts<optimalCosts)||i==0&& j==1)?globalCosts:optimalCosts;
-
-        }
-    }
-
-    cout << "Optimal Costs: "<<optimalCosts << " Optimal Indeces i and j: "<< optimalIndexes.at(1) << " " << optimalIndexes.at(2) << endl;
-    for (int i = 0; i < costs.size() ; i++){
-        for (int n = 1; n < 6; n++){
-            if (i == (n * 5)){
-                cout << endl;
-                break;
-            }
-        }
-        cout << *(costs.begin()+i)<< " " ;
-    }
     return 0;
 }
