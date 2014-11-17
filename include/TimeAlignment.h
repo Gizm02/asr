@@ -16,7 +16,7 @@ class TimeAlignment{
 		vector<double> hypothesis;
 		vector<vector<double> > cost_matrix;
 		vector<vector<pair<int,int> > > backtrack_matrix;
-		vector<int> weights;
+		vector<double> weights;
 		
 		int calculation_counter;
 

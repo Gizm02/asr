@@ -1,5 +1,8 @@
 #include "../include/TimeAlignment.h"
 #include <fstream>
+#include <iostream> 
+	
+
 using namespace std;
 /*
 class TimeAlignment{
@@ -13,7 +16,7 @@ class TimeAlignment{
 		vector<double> hypothesis;
 		vector<vector<double> > cost_matrix;
 		vector<vector<pair<int,int> > > backtrack_matrix;
-		vector<int> weights;
+		vector<double> weights;
 		
 		int calculation_counter;
 
@@ -23,7 +26,7 @@ TimeAlignment::TimeAlignment(string hypo_filename, string ref_filename, vector<d
 	ifstream hypo_file(hypo_filename);
 	ifstream ref_file(ref_filename);
 	weights = w;
-	/*
+	
 	calculation_counter = 0;
 
 	if(!hypo_file) exit(EXIT_FAILURE);
@@ -37,18 +40,21 @@ TimeAlignment::TimeAlignment(string hypo_filename, string ref_filename, vector<d
 	while(getline(ref_file,line)){
         reference.push_back(strtod(line.c_str(),NULL));
     }
-
-	cost_matrix.resize(hypothesis.size(), 0);
-	for (vector< vector<int> >::iterator it = cost_matrix.begin(); it != cost_matrix.end(); it++){
-		it->resize(reference.size(), 0);
-	}
-
-	pair<int, int> buffer(0,0);
+	
+	vector<double> buffer;
 	cost_matrix.resize(hypothesis.size(), buffer);
-	for (vector< vector<pair<int,int> > >::iterator it = cost_matrix.begin(); it != cost_matrix.end(); it++){
-		it->resize(reference.size(), buffer);
+
+	for (vector< vector<double> >::iterator it = cost_matrix.begin(); it != cost_matrix.end(); it++){
+		it->resize(reference.size(), 0.0);
 	}
-*/
+	
+	pair<int, int> pairBuffer(0,0);
+	vector<pair<int,int> > pairVectorBuffer;
+	backtrack_matrix.resize(hypothesis.size(), pairVectorBuffer);
+	for (vector< vector<pair<int,int> > >::iterator it = backtrack_matrix.begin(); it != backtrack_matrix.end(); it++){
+		it->resize(reference.size(), pairBuffer);
+	}
+
 
 }
 
