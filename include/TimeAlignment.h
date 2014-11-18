@@ -10,7 +10,7 @@ class TimeAlignment{
 		TimeAlignment(string hypo_filename, string ref_filename, vector<double> w);
 		double computeDistanceRec();		
 		double computeDistanceRecMemoi();
-		void computeDistanceDP();
+		double computeDistanceDP();
 	private:
 		vector<double> reference;
 		vector<double> hypothesis;

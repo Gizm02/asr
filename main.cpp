@@ -10,5 +10,7 @@ int main(){
 	TimeAlignment* t = new TimeAlignment(hyp_name, ref_name, weights);
  	cout << "lol" << endl;
 	cout << t->computeDistanceRec() << endl;
+	cout << t->computeDistanceRecMemoi() << endl;
+	cout << t->computeDistanceDP() << endl;
 	return 0;
 }
