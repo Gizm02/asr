@@ -8,8 +8,8 @@ using namespace std;
 class TimeAlignment{
 	public:
 		TimeAlignment(string hypo_filename, string ref_filename, vector<double> w);
-		void computeDistanceRec();
-		void computeDistanceRecMemoi();
+		double computeDistanceRec();		
+		double computeDistanceRecMemoi();
 		void computeDistanceDP();
 	private:
 		vector<double> reference;
@@ -19,5 +19,7 @@ class TimeAlignment{
 		vector<double> weights;
 		
 		int calculation_counter;
-
+		double calculate1Norm(int xPos, int yPos);
+		double computeDistanceRec(int xPos, int yPos);
+		double computeDistanceRecMemoi(int xPos, int yPos);
 };

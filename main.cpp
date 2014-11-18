@@ -1,11 +1,14 @@
 #include "include/TimeAlignment.h"
+#include <iostream>
+
+using namespace std;
 
 int main(){
-	string hyp_name = "materials/u4/test.dat";
-	string ref_name = "materials/u4/ref.dat";
+	string hyp_name = "material/u4/test.dat.train";
+	string ref_name = "material/u4/ref.dat.train";
 	vector<double> weights = {2.0,0.0,2.0};
-
-	TimeAlignment t(hyp_name, ref_name, weights);
- 
+	TimeAlignment* t = new TimeAlignment(hyp_name, ref_name, weights);
+ 	cout << "lol" << endl;
+	cout << t->computeDistanceRec() << endl;
 	return 0;
 }

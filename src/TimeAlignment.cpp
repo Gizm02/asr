@@ -1,7 +1,8 @@
 #include "../include/TimeAlignment.h"
 #include <fstream>
 #include <iostream> 
-	
+#include <cmath>
+#include <algorithm>
 
 using namespace std;
 /*
@@ -29,8 +30,8 @@ TimeAlignment::TimeAlignment(string hypo_filename, string ref_filename, vector<d
 	
 	calculation_counter = 0;
 
-	if(!hypo_file) exit(EXIT_FAILURE);
-	if(!ref_file) exit(EXIT_FAILURE);
+	if(!hypo_file) cout << "Hypo file couldn't be opened" << endl;
+	if(!ref_file) cout << "Ref file couldn't be opened" << endl;
 
 	string line;
 	while(getline(hypo_file,line)){
@@ -57,13 +58,34 @@ TimeAlignment::TimeAlignment(string hypo_filename, string ref_filename, vector<d
 
 
 }
-
-void TimeAlignment::computeDistanceRec(){
-
+double TimeAlignment::calculate1Norm(int xPos, int yPos){
+	return abs(hypothesis.at(xPos) - reference.at(yPos));
 }
-void TimeAlignment::computeDistanceRecMemoi(){
-
-
+double TimeAlignment::computeDistanceRec(){
+	return computeDistanceRec(hypothesis.size() -1, reference.size() -1);
+}
+double TimeAlignment::computeDistanceRec(int xPos, int yPos){
+	vector<double> prevCosts(3,0);
+	if (xPos == 0 ){
+		return calculate1Norm(0, yPos);
+	} else if(yPos == 1){
+		prevCosts.at(0) = computeDistanceRec(xPos -1, yPos -0) + weights[0];
+		prevCosts.at(1) = computeDistanceRec(xPos -1, yPos -1) + weights[1];
+		return calculate1Norm(xPos, yPos) + *(min_element(prevCosts.begin(), prevCosts.end()));
+	} else if(yPos == 0){
+		return calculate1Norm(xPos-1, 0) + computeDistanceRec(xPos -1, 0) + weights[0];
+	} else {
+		prevCosts.at(0) = computeDistanceRec(xPos -1, yPos -0) + weights[0];
+		prevCosts.at(1) = computeDistanceRec(xPos -1, yPos -1) + weights[1];
+		prevCosts.at(2) = computeDistanceRec(xPos -1, yPos -2) + weights[2];
+		return calculate1Norm(xPos, yPos) + *(min_element(prevCosts.begin(), prevCosts.end()));
+	}
+}
+double TimeAlignment::computeDistanceRecMemoi(){
+	return computeDistanceRecMemoi(hypothesis.size() -1, reference.size() -1);
+}
+double TimeAlignment::computeDistanceRecMemoi(int xPos, int yPos){
+	return 0;
 }
 void TimeAlignment::computeDistanceDP(){
 
