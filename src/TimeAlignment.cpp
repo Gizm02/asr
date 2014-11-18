@@ -43,10 +43,10 @@ TimeAlignment::TimeAlignment(string hypo_filename, string ref_filename, vector<d
     }
 	
 	vector<double> buffer;
-	cost_matrix.resize(hypothesis.size(), buffer);
+	cost_matrix.resize(reference.size(), buffer);
 
 	for (vector< vector<double> >::iterator it = cost_matrix.begin(); it != cost_matrix.end(); it++){
-		it->resize(reference.size(), -1.0);
+		it->resize(hypothesis.size(), -1.0);
 	}
 	
 	pair<int, int> pairBuffer(0,0);
@@ -58,89 +58,120 @@ TimeAlignment::TimeAlignment(string hypo_filename, string ref_filename, vector<d
 
 
 }
-double TimeAlignment::calculate1Norm(int xPos, int yPos){
-	return abs(hypothesis.at(xPos) - reference.at(yPos));
+
+double TimeAlignment::calculate1Norm(int x1, int x2){
+	return abs(reference.at(x1) - hypothesis.at(x2));
 }
+
 double TimeAlignment::computeDistanceRec(){
-	return computeDistanceRec(hypothesis.size() -1, reference.size() -1);
+	return computeDistanceRec(reference.size()-1, hypothesis.size()-1);
 }
-double TimeAlignment::computeDistanceRec(int xPos, int yPos){
+
+double TimeAlignment::computeDistanceRec(int refPos, int hypPos){
 	vector<double> prevCosts(3,pow(2,30));
-	if (xPos == 0 ){
-		return calculate1Norm(0, yPos);
-	} else if(yPos == 1){
-		prevCosts.at(0) = computeDistanceRec(xPos -1, yPos -0) + weights[0];
-		prevCosts.at(1) = computeDistanceRec(xPos -1, yPos -1) + weights[1];
-		return calculate1Norm(xPos, yPos) + *(min_element(prevCosts.begin(), prevCosts.end()));
-	} else if(yPos == 0){
-		return calculate1Norm(xPos-1, 0) + computeDistanceRec(xPos -1, 0) + weights[0];
+	if (hypPos == 0 ){
+		calculation_counter++;
+		return calculate1Norm(refPos, hypPos);
+	} else if(refPos == 1){
+		calculation_counter++;
+		prevCosts.at(0) = computeDistanceRec(refPos -0, hypPos -1) + weights[0];
+		prevCosts.at(1) = computeDistanceRec(refPos -1, hypPos -1) + weights[1];
+		return calculate1Norm(refPos, hypPos) + *(min_element(prevCosts.begin(), prevCosts.end()));
+	} else if(refPos == 0){
+		calculation_counter++;
+		return calculate1Norm(refPos, hypPos) + computeDistanceRec(refPos, hypPos-1) + weights[0];
 	} else {
-		prevCosts.at(0) = computeDistanceRec(xPos -1, yPos -0) + weights[0];
-		prevCosts.at(1) = computeDistanceRec(xPos -1, yPos -1) + weights[1];
-		prevCosts.at(2) = computeDistanceRec(xPos -1, yPos -2) + weights[2];
-		return calculate1Norm(xPos, yPos) + *(min_element(prevCosts.begin(), prevCosts.end()));
+		calculation_counter++;
+		prevCosts.at(0) = computeDistanceRec(refPos -0, hypPos -1) + weights[0];
+		prevCosts.at(1) = computeDistanceRec(refPos -1, hypPos -1) + weights[1];
+		prevCosts.at(2) = computeDistanceRec(refPos -2, hypPos -1) + weights[2];
+		return calculate1Norm(refPos, hypPos) + *(min_element(prevCosts.begin(), prevCosts.end()));
 	}
 }
 double TimeAlignment::computeDistanceRecMemoi(){
-	return computeDistanceRecMemoi(hypothesis.size() -1, reference.size() -1);
+	return computeDistanceRecMemoi(reference.size()-1, hypothesis.size() -1);
 }
-double TimeAlignment::computeDistanceRecMemoi(int xPos, int yPos){
+double TimeAlignment::computeDistanceRecMemoi(int refPos, int hypPos){
 	vector<double> prevCosts(3,pow(2,30));
-	if (xPos == 0 ){
-		return calculate1Norm(0, yPos);
-	} else if(yPos == 1){
-		if (cost_matrix.at(xPos-1).at(yPos-0) == -1){
-			cost_matrix[xPos-1][yPos-0] = computeDistanceRecMemoi(xPos -1, yPos - 0);
+	if (hypPos == 0 ){
+		calculation_counter++;
+		cost_matrix[refPos][hypPos] = calculate1Norm(refPos, hypPos);
+		return cost_matrix[refPos][hypPos];
+	} else if(refPos == 1){
+		for (int q = 0; q < 2; q++){
+			if (cost_matrix[refPos-q][hypPos-1] == -1){
+				calculation_counter++;
+				cost_matrix[refPos-q][hypPos-1] = computeDistanceRecMemoi(refPos-q, hypPos-1);
+			}
+			prevCosts[q] =cost_matrix[refPos-q][hypPos-1] + weights[q];
 		}
-		prevCosts.at(0) = cost_matrix[xPos-1][yPos-0] + weights[0];
-		if (cost_matrix.at(xPos-1).at(yPos-1) == -1){
-			cost_matrix[xPos-1][yPos-1] = computeDistanceRecMemoi(xPos -1, yPos -1);
+		calculation_counter++;
+		cost_matrix[refPos][hypPos] = calculate1Norm(refPos, hypPos) + *(min_element(prevCosts.begin(), prevCosts.end()));
+		return cost_matrix[refPos][hypPos];
+	} else if(refPos == 0){	
+		calculation_counter++;
+		if (cost_matrix.at(refPos).at(hypPos-1) == -1){
+			calculation_counter++;
+			cost_matrix[refPos][hypPos-1] = computeDistanceRecMemoi(refPos, hypPos - 1);
 		}
-		prevCosts.at(1) = cost_matrix[xPos-1][yPos-1] + weights[1];
-		return calculate1Norm(xPos, yPos) + *(min_element(prevCosts.begin(), prevCosts.end()));
-	} else if(yPos == 0){
-		if (cost_matrix.at(xPos-1).at(yPos-0) == -1){
-			cost_matrix[xPos-1][yPos-0] = computeDistanceRecMemoi(xPos -1, yPos - 0);
-		}
-		prevCosts.at(0) = cost_matrix[xPos-1][yPos-0] + weights[0];
-		return calculate1Norm(xPos-1, 0) + prevCosts.at(0);
+		prevCosts.at(0) = cost_matrix[refPos][hypPos-1] + weights[0];
+		cost_matrix[refPos][hypPos] = calculate1Norm(refPos, hypPos) + prevCosts.at(0);
+		return cost_matrix[refPos][hypPos];
 	} else {
-		if (cost_matrix.at(xPos-1).at(yPos-0) == -1){
-			cost_matrix[xPos-1][yPos-0] = computeDistanceRecMemoi(xPos -1, yPos - 0);
-		}
-		prevCosts.at(0) = cost_matrix[xPos-1][yPos-0] + weights[0];
-		if (cost_matrix.at(xPos-1).at(yPos-1) == -1){
-			cost_matrix[xPos-1][yPos-1] = computeDistanceRecMemoi(xPos -1, yPos -1);
-		}
-		prevCosts.at(1) = cost_matrix[xPos-1][yPos-1] + weights[1];
-		if (cost_matrix.at(xPos-1).at(yPos-2) == -1){
-			cost_matrix[xPos-1][yPos-2] = computeDistanceRecMemoi(xPos -1, yPos -2);
-		} 
-		prevCosts.at(2) = cost_matrix[xPos-1][yPos-2] + weights[2];
-		return calculate1Norm(xPos, yPos) + *(min_element(prevCosts.begin(), prevCosts.end()));
+		for (int q = 0; q < 3; q++){
+			if (cost_matrix[refPos-q][hypPos-1] == -1){
+				calculation_counter++;
+				cost_matrix[refPos-q][hypPos-1] = computeDistanceRecMemoi(refPos-q, hypPos-1);
+			}
+			prevCosts[q] =cost_matrix[refPos-q][hypPos-1] + weights[q];
+		}	
+		calculation_counter++;
+		cost_matrix[refPos][hypPos] = calculate1Norm(refPos, hypPos) + *(min_element(prevCosts.begin(), prevCosts.end()));
+		return cost_matrix[refPos][hypPos];
 	}
 }
-double TimeAlignment::computeDistanceDP(){
-	cost_matrix[0][0] = calculate1Norm(0,0);
-	for (int i = 1; i < (int) cost_matrix.size(); i++){
-		cost_matrix[i][0] = calculate1Norm(i,0) + cost_matrix[i-1][0];
-	}
-	for (int j = 1; j < (int)cost_matrix[0].size(); j++){
-		cost_matrix[0][j] = calculate1Norm(0,j) + cost_matrix[0][j-1];
-	}
 
-	for (int i = 1; i < (int)cost_matrix.size(); i++){
-		for (int j = 1; j <(int) cost_matrix[0].size(); j++){
+double TimeAlignment::computeDistanceDP(){
+	calculation_counter++;
+	cost_matrix[0][0] = calculate1Norm(0,0);
+	for (unsigned int i = 1; i < cost_matrix.size(); i++){
+		calculation_counter++;
+		cost_matrix[i][0] = calculate1Norm(i,0); //+ cost_matrix[i-1][0];
+	}
+	for (unsigned int j = 1; j < cost_matrix[0].size(); j++){
+		calculation_counter++;
+		cost_matrix[0][j] = calculate1Norm(0,j) + cost_matrix[0][j-1] + weights[0];
+	}
+	for (unsigned int i = 1; i < cost_matrix.size(); i++){
+		for (unsigned int j = 1; j < cost_matrix[i].size(); j++){
 			vector<double> prevCosts(3,pow(2,30));
-			for (int q = 0; q < 3; q++){
-				if (j == 1 && q == 2){
-					break;
-				}
-				prevCosts[q] = cost_matrix.at(i-1).at(j-q) + weights[q];
+			for (int q = 0; q < 3 && q <= i; q++){
+				prevCosts[q] = cost_matrix.at(i-q).at(j-1) + weights[q];
 			}
+			calculation_counter++;
 			cost_matrix[i][j] = calculate1Norm(i,j) + *(min_element(prevCosts.begin(), prevCosts.end()));
 		}
 	}
 
-	return cost_matrix[hypothesis.size() -1][ reference.size() -1];
+	return cost_matrix[reference.size()-1][hypothesis.size()-1];
+}
+
+void TimeAlignment::resetCosts(){
+	for(unsigned int i = 0; i < cost_matrix.size(); i++){
+		for (unsigned int j = 0; j < cost_matrix[i].size(); j++){
+			cost_matrix[i][j] = -1;
+		}
+	}
+	//calculation_counter = 0;
+}
+
+void TimeAlignment::outputMatrix(){
+	cout << "Started with matrix" << endl;
+	for(unsigned int i = 0; i < cost_matrix.size(); i++){
+		for (unsigned int j = 0; j < cost_matrix[i].size(); j++){
+			cout << cost_matrix[i][j] << " ";
+		}
+		cout << endl;
+	}
+	cout << "Done with matrix" << endl;
 }

@@ -11,6 +11,9 @@ class TimeAlignment{
 		double computeDistanceRec();		
 		double computeDistanceRecMemoi();
 		double computeDistanceDP();
+		void resetCosts();
+		void outputMatrix();
+		int calculation_counter;
 	private:
 		vector<double> reference;
 		vector<double> hypothesis;
@@ -18,7 +21,7 @@ class TimeAlignment{
 		vector<vector<pair<int,int> > > backtrack_matrix;
 		vector<double> weights;
 		
-		int calculation_counter;
+		
 		double calculate1Norm(int xPos, int yPos);
 		double computeDistanceRec(int xPos, int yPos);
 		double computeDistanceRecMemoi(int xPos, int yPos);
